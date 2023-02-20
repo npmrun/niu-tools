@@ -1,0 +1,12 @@
+{
+    "name": "niu-tools",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

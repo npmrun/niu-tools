@@ -1,0 +1,21 @@
+{
+  "name": "core",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+    "build": "tsc && tsc-alias"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dcloudio/types": "^3.2.11",
+    "@types/node": "^18.14.0",
+    "concurrently": "^7.6.0",
+    "tsc-alias": "^1.8.2",
+    "typescript": "^4.9.5"
+  }
+}

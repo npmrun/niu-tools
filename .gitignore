@@ -1,0 +1,3 @@
+node_modules
+packages/niu-tools/*
+!packages/niu-tools/package.json
