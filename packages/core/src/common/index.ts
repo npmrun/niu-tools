@@ -1,4 +1,4 @@
-export * as util from "./util"
+export * as util from "./func"
 
 export const extend = Object.assign
 

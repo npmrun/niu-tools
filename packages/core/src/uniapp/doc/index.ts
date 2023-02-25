@@ -1,6 +1,6 @@
 import { whichPlatform } from "@/uniapp/util"
 import { showLoading, hideLoading } from "@/uniapp/loading"
-import { parstURL } from "@/common/util"
+import { parstURL } from "@/common/func"
 
 /**
  * 通过下载线上文档，然后在本地打开，支持app和微信小程序
