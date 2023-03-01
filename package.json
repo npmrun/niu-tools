@@ -1,11 +1,10 @@
 {
   "name": "uniapp-tools",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "pnpm --filter core dev",
     "build": "pnpm --filter core build",
+    "release": "cd packages/niu-tools && npm publish",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
