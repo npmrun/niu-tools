@@ -11,7 +11,7 @@ try {
     TinyEmitter = TinyEmitterModule.TinyEmitter
     emitter = new TinyEmitter();
 } catch (error) {
-    throw new Error("请先安装tiny-emitter才可使用此模块");
+    console.error("请先安装tiny-emitter才可使用event模块")
 }
 
 module.exports = exports = {
