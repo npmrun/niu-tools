@@ -45,16 +45,3 @@ jobs:
         run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
-      - name: 读取当前版本号
-        id: version
-        uses: ashley-taylor/read-json-property-action@v1.1
-        with:
-          path: ./packages/niu-tools/package.json
-          property: version
-      - name: Create Release for Tag
-        id: release_tag
-        uses: yyx990803/release-tag@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.version.outputs.value }}
