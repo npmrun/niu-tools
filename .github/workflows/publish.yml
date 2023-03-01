@@ -41,6 +41,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
+      - name: Build
+        run: pnpm build
       - name: publish
         run: npm run release
         env:
