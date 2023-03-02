@@ -9,12 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@dcloudio/types": "^3.2.11",
-    "@types/node": "^18.14.0",
-    "concurrently": "^7.6.0",
-    "tiny-emitter": "^2.1.0",
-    "tsc-alias": "^1.8.2",
-    "typescript": "^4.9.5"
+    "@dcloudio/types": "^3.2.11"
   },
   "dependencies": {
     "@niu-tools/core": "workspace:*"
