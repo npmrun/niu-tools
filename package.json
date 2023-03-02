@@ -6,8 +6,7 @@
     "rm": "node ./scripts/rm.js",
     "dev": "pnpm --filter core dev",
     "build": "pnpm -r run build",
-    "release": "pnpm releaseOnly",
-    "releaseOnly": "pnpm -r publish",
+    "release": "pnpm -r publish --access public",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
