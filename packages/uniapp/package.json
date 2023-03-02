@@ -18,6 +18,5 @@
   },
   "dependencies": {
     "@niu-tools/core": "workspace:*"
-  },
-  "version": null
+  }
 }
