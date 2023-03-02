@@ -1,5 +1,5 @@
 node_modules
 packages/**/dist/*
+!packages/**/dist/CHANGELOG.md
+!packages/**/dist/readme.md
 !packages/**/dist/package.json
-packages/niu-tools/*
-!packages/niu-tools/package.json
