@@ -1,6 +1,6 @@
 {
-  "name": "core",
-  "private": "true",
+  "name": "@pkg/core",
+  "private": true,
   "scripts": {
     "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
     "build": "tsc && tsc-alias"

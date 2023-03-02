@@ -1,6 +1,6 @@
 {
-  "name": "uniapp",
-  "private": "true",
+  "name": "@pkg/uniapp",
+  "private": true,
   "scripts": {
     "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
     "build": "tsc && tsc-alias"
