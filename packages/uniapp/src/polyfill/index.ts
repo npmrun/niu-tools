@@ -1,6 +1,5 @@
-import { isFunction, isObject, isString } from "@/common"
+import { isFunction, isObject, isString } from "@niu-tools/core/common"
 import { whichPlatform } from "../util"
-console.log(222);
 
 if (whichPlatform() === "h5") {
     function fileDownLoad(data: any) {

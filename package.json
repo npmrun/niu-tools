@@ -6,7 +6,8 @@
     "rm": "node ./scripts/rm.js",
     "dev": "pnpm --filter core dev",
     "build": "pnpm run rm && pnpm -r run build",
-    "release": "pnpm -r publish",
+    "release": "concurrently \"pnpm build\" \"pnpm releaseOnly\"",
+    "releaseOnly": "changeset publish",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -14,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.6.0",
+    "@changesets/cli": "^2.26.0",
     "del": "^7.0.0",
     "vitest": "^0.28.5"
   }

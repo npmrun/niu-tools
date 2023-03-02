@@ -1,0 +1,15 @@
+{
+    "name": "@niu-tools/uniapp",
+    "version": "0.0.1-beta.1",
+    "description": "",
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@niu-tools/core": "workspace:*"
+    }
+}

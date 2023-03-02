@@ -1,5 +1,5 @@
-import { whichPlatform } from "@/uniapp/util"
-import { config } from "@/uniapp/config"
+import { whichPlatform } from "@/util"
+import { config } from "@/config"
 
 /**
  * 获取状态栏的高度

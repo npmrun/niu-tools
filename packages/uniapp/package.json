@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "uniapp",
   "private": "true",
   "scripts": {
     "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
@@ -15,5 +15,8 @@
     "tiny-emitter": "^2.1.0",
     "tsc-alias": "^1.8.2",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@niu-tools/core": "workspace:*"
   }
 }

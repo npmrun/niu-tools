@@ -1,4 +1,4 @@
-import type { platformRule } from "@/uniapp/types"
+import type { platformRule } from "@/types"
 
 export function whichPlatform(): platformRule {
     const env: platformRule = process.env.VUE_APP_PLATFORM as platformRule
