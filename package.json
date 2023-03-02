@@ -1,10 +1,12 @@
 {
-  "name": "uniapp-tools",
+  "name": "niu-tools",
   "private": true,
+  "type": "module",
   "scripts": {
+    "rm": "node ./scripts/rm.js",
     "dev": "pnpm --filter core dev",
-    "build": "pnpm --filter core build",
-    "release": "cd packages/niu-tools && npm publish",
+    "build": "pnpm run rm && pnpm -r run build",
+    "release": "pnpm -r publish",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -12,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "del": "^7.0.0",
     "vitest": "^0.28.5"
   }
 }

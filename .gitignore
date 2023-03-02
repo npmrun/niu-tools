@@ -1,3 +1,5 @@
 node_modules
+packages/**/dist/*
+!packages/**/dist/package.json
 packages/niu-tools/*
 !packages/niu-tools/package.json
