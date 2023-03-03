@@ -1,5 +1,5 @@
 {
-    "name": "@niu-tools/uniapp",
+    "name": "@niu-tools/vue3",
     "version": "0.0.5",
     "description": "",
     "main": "index.js",
@@ -7,10 +7,14 @@
     "typings": "index.d.ts",
     "types": "index.d.ts",
     "keywords": [
-        "utils"
+        "utils",
+        "vue3"
     ],
     "author": "npmrun",
     "license": "MIT",
+    "peerDependencies": {
+        "vue": ">=3.0.0"
+    },
     "dependencies": {
         "@niu-tools/core": "workspace:*"
     }

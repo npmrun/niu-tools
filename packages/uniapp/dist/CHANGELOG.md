@@ -1,5 +1,13 @@
 # @niu-tools/uniapp
 
+## 0.0.5
+
+### Patch Changes
+
+- update info
+- Updated dependencies
+  - @niu-tools/core@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,0 +1,20 @@
+{
+  "name": "@pkg/vue3",
+  "private": true,
+  "scripts": {
+    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+    "build": "tsc && tsc-alias"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@niu-tools/core": "workspace:*"
+  },
+  "devDependencies": {
+    "vue": "^3.2.47"
+  }
+}
