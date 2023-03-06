@@ -1,5 +1,11 @@
 # @niu-tools/vue3
 
+## 0.0.6
+
+### Patch Changes
+
+- modify func
+
 ## 0.0.5
 
 ### Patch Changes
