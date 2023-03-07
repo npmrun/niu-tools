@@ -1,14 +1,21 @@
 {
-  "name": "@pkg/core",
-  "private": true,
-  "scripts": {
-    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
-    "build": "tsc && tsc-alias"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tiny-emitter": "^2.1.0"
-  }
+    "name": "@niu-tools/core",
+    "version": "0.0.7",
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "keywords": [
+        "utils",
+        "core"
+    ],
+    "author": "npmrun",
+    "license": "MIT",
+    "scripts": {
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "tsc && tsc-alias"
+    },
+    "devDependencies": {
+        "tiny-emitter": "^2.1.0"
+    }
 }

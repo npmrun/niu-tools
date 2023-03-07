@@ -1,20 +1,27 @@
 {
-  "name": "@pkg/vue3",
-  "private": true,
-  "scripts": {
-    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
-    "build": "tsc && tsc-alias"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "peerDependencies": {
-    "vue": ">=3.0.0"
-  },
-  "dependencies": {
-    "@niu-tools/core": "workspace:*"
-  },
-  "devDependencies": {
-    "vue": "^3.2.47"
-  }
+    "name": "@niu-tools/vue3",
+    "version": "0.0.7",
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "keywords": [
+        "utils",
+        "vue3"
+    ],
+    "author": "npmrun",
+    "license": "MIT",
+    "scripts": {
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "tsc && tsc-alias"
+    },
+    "peerDependencies": {
+        "vue": ">=3.0.0"
+    },
+    "dependencies": {
+        "@niu-tools/core": "workspace:*"
+    },
+    "devDependencies": {
+        "vue": "^3.2.47"
+    }
 }

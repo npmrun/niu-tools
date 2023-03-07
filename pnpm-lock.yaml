@@ -8,6 +8,8 @@ importers:
       '@types/node': ^18.14.0
       concurrently: ^7.6.0
       del: ^7.0.0
+      fast-glob: ^3.2.12
+      fs-extra: ^11.1.0
       tsc-alias: ^1.8.2
       tsx: ^3.12.3
       typescript: ^4.9.5
@@ -17,6 +19,8 @@ importers:
       '@types/node': 18.14.0
       concurrently: 7.6.0
       del: 7.0.0
+      fast-glob: 3.2.12
+      fs-extra: 11.1.0
       tsc-alias: 1.8.2
       tsx: 3.12.3
       typescript: 4.9.5
@@ -29,7 +33,10 @@ importers:
       tiny-emitter: 2.1.0
 
   packages/core/dist:
-    specifiers: {}
+    specifiers:
+      tiny-emitter: ^2.1.0
+    devDependencies:
+      tiny-emitter: 2.1.0
 
   packages/uniapp:
     specifiers:
@@ -42,9 +49,12 @@ importers:
 
   packages/uniapp/dist:
     specifiers:
-      '@niu-tools/core': workspace:*
+      '@dcloudio/types': ^3.2.11
+      '@niu-tools/core': 0.0.5
     dependencies:
       '@niu-tools/core': link:../../core/dist
+    devDependencies:
+      '@dcloudio/types': 3.2.11
 
   packages/vue3:
     specifiers:
@@ -57,9 +67,12 @@ importers:
 
   packages/vue3/dist:
     specifiers:
-      '@niu-tools/core': workspace:*
+      '@niu-tools/core': 0.0.5
+      vue: ^3.2.47
     dependencies:
       '@niu-tools/core': link:../../core/dist
+    devDependencies:
+      vue: 3.2.47
 
 packages:
 
@@ -1573,6 +1586,15 @@ packages:
       is-callable: 1.2.7
     dev: true
 
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs-extra/7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
     engines: {node: '>=6 <7 || >=8'}
@@ -2006,6 +2028,14 @@ packages:
 
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
+    optionalDependencies:
+      graceful-fs: 4.2.10
+    dev: true
+
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.10
     dev: true
@@ -2907,6 +2937,11 @@ packages:
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
+    dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
     dev: true
 
   /validate-npm-package-license/3.0.4:
