@@ -9,7 +9,6 @@
         "removeComments": true,
         "resolveJsonModule": false,
         "declaration": true,
-        "allowJs": true,
         "declarationDir": "./dist",
         "outDir": "./dist",
         "rootDir": "src", // 指定.的话，在dist会生成src同结构的目录文件
@@ -18,6 +17,6 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["typings/**/*.ts", "src/**/*.ts"],
+    "include": ["src"],
     "exclude": ["node_modules"]
 }
