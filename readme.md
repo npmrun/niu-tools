@@ -17,11 +17,9 @@ pnpm 用于库的编译运行以及发布，changeset 用于生成文档和版�
 本地发布
 
 ```
-pnpm run rm # 删除所有包的dist下的源码
-pnpm run build # 构建所有包的源码
 npx changeset # 版本文档生成
 npx changeset version # 版本升级
-pnpm run release # 包发布
+pnpm run publish # 包发布
 ```
 
 因为用了 action,可以用 action 自动发布，可以使用以下两步：

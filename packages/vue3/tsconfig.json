@@ -1,22 +1,14 @@
 {
+    "extends": "@internal/tsconfig/tsconfig.json",
     "compilerOptions": {
-        "target": "ESNext", // 最低兼容的版本
-        "strict": true, // 启用严格模式
-        "module": "CommonJS", // 指定生成什么模块的代码
-        "moduleResolution": "node",
-        "lib": ["DOM", "ESNext"],
-        "allowSyntheticDefaultImports": true,
-        "removeComments": true,
-        "resolveJsonModule": false,
         "declaration": true,
         "declarationDir": "./dist",
         "outDir": "./dist",
-        "rootDir": "src", // 指定.的话，在dist会生成src同结构的目录文件
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./*"]
         }
     },
-    "include": ["src"],
-    "exclude": ["node_modules"]
+    "include": ["**/*"],
+    "exclude": ["node_modules", "dist"]
 }

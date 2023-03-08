@@ -1,0 +1,44 @@
+diff --git a/dist/get-packages.cjs.dev.js b/dist/get-packages.cjs.dev.js
+index 7ebb3c698ee59d776b7e0d3aa2b741d3af41ed67..cc285aa0b675d38c997914f095a48f5e80f018f5 100644
+--- a/dist/get-packages.cjs.dev.js
++++ b/dist/get-packages.cjs.dev.js
+@@ -96,7 +96,7 @@ function _getPackages() {
+           case 14:
+             _context.prev = 14;
+             _context.next = 17;
+-            return readYamlFile__default(path.join(cwd, "pnpm-workspace.yaml"));
++            return readYamlFile__default(path.join(cwd, "pnpm-changeset-workspace.yaml"));
+ 
+           case 17:
+             manifest = _context.sent;
+@@ -275,7 +275,7 @@ function getPackagesSync(dir) {
+     };
+   } else {
+     try {
+-      var manifest = readYamlFile.sync(path.join(cwd, "pnpm-workspace.yaml"));
++      var manifest = readYamlFile.sync(path.join(cwd, "pnpm-changeset-workspace.yaml"));
+ 
+       if (manifest && manifest.packages) {
+         tool = {
+diff --git a/dist/get-packages.cjs.prod.js b/dist/get-packages.cjs.prod.js
+index 124d820b92b4c24af03d41f0644279ab2e1bd45b..aa5f9928790a74ffc1196c5cda8600c2dbdca88f 100644
+--- a/dist/get-packages.cjs.prod.js
++++ b/dist/get-packages.cjs.prod.js
+@@ -58,7 +58,7 @@ function _getPackages() {
+         break;
+ 
+        case 14:
+-        return _context.prev = 14, _context.next = 17, readYamlFile__default(path.join(cwd, "pnpm-workspace.yaml"));
++        return _context.prev = 14, _context.next = 17, readYamlFile__default(path.join(cwd, "pnpm-changeset-workspace.yaml"));
+ 
+        case 17:
+         (manifest = _context.sent) && manifest.packages && (tool = {
+@@ -180,7 +180,7 @@ function getPackagesSync(dir) {
+     packageGlobs: pkg.bolt.workspaces
+   }; else {
+     try {
+-      var manifest = readYamlFile.sync(path.join(cwd, "pnpm-workspace.yaml"));
++      var manifest = readYamlFile.sync(path.join(cwd, "pnpm-changeset-workspace.yaml"));
+       manifest && manifest.packages && (tool = {
+         type: "pnpm",
+         packageGlobs: manifest.packages

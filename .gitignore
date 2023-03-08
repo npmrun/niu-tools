@@ -1,5 +1,6 @@
 node_modules
-packages/**/dist/*
-!packages/**/dist/CHANGELOG.md
-!packages/**/dist/readme.md
-!packages/**/dist/package.json
+dist
+# packages/**/dist/*
+# !packages/**/dist/CHANGELOG.md
+# !packages/**/dist/readme.md
+# !packages/**/dist/package.json

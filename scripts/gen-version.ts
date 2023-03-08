@@ -33,6 +33,7 @@ for (let i = 0; i < allpkgs.length; i++) {
             if (key in pkgVersions)
                 mod.dependencies[key] = pkgVersions[key]
         }
+        mod.scripts = {}
         await fs.writeJSON(path.join(packageDist, 'package.json'), mod, { spaces: 4 })
     }
 }

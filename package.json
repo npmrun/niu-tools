@@ -5,10 +5,9 @@
   "scripts": {
     "rm": "node ./scripts/rm.js",
     "gen": "tsx ./scripts/gen-version.ts",
-    "dev": "pnpm --filter core dev",
-    "build": "pnpm run rm && pnpm -r run build && pnpm run gen",
+    "dev": "pnpm --filter @niu-tools/core dev",
+    "build": "pnpm run rm && pnpm run gen && pnpm -r run build",
     "publish": "tsx ./scripts/publish.ts",
-    "release": "pnpm -r publish --access public",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -17,7 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
-    "@types/node": "^18.14.0",
+    "@internal/tsconfig": "workspace:*",
+    "@types/node": "^18.14.6",
     "concurrently": "^7.6.0",
     "del": "^7.0.0",
     "fast-glob": "^3.2.12",
@@ -25,6 +25,11 @@
     "tsc-alias": "^1.8.2",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5",
-    "vitest": "^0.28.5"
+    "vitest": "^0.29.2"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@manypkg/get-packages@1.1.3": "patches/@manypkg__get-packages@1.1.3.patch"
+    }
   }
 }
