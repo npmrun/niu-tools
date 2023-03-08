@@ -65,7 +65,9 @@ export function throttle<T extends any[], R = void>(
   return function (this: void, ...argu: T) {
     const now = +new Date();
     if (last && now - last < interval) {
-      clearTimeout(last);
+      if(timer){
+        clearTimeout(timer);
+      }
       timer = setTimeout(() => {
         last = now;
         fn.apply(this, argu);
