@@ -5,6 +5,7 @@
         "module": "CommonJS", // 指定生成什么模块的代码
         "moduleResolution": "node",
         "lib": ["DOM", "ESNext"],
+        "types": ["vitest/globals"],
         "allowSyntheticDefaultImports": true,
         "removeComments": true,
         "resolveJsonModule": false,
