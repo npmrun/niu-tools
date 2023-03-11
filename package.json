@@ -5,7 +5,7 @@
   "scripts": {
     "rm": "node ./scripts/rm.js",
     "gen": "tsx ./scripts/gen-version.ts",
-    "dev": "pnpm --filter @niu-tools/core dev",
+    "dev": "pnpm run gen && pnpm --filter @niu-tools/core dev",
     "build": "pnpm run rm && pnpm run gen && pnpm -r run build",
     "publish": "tsx ./scripts/publish.ts",
     "test": "vitest",
