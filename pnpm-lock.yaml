@@ -42,12 +42,6 @@ importers:
     devDependencies:
       tiny-emitter: 2.1.0
 
-  packages/core/dist:
-    specifiers:
-      tiny-emitter: ^2.1.0
-    devDependencies:
-      tiny-emitter: 2.1.0
-
   packages/uniapp:
     specifiers:
       '@dcloudio/types': ^3.2.11
@@ -60,9 +54,9 @@ importers:
   packages/uniapp/dist:
     specifiers:
       '@dcloudio/types': ^3.2.11
-      '@niu-tools/core': 0.0.7
+      '@niu-tools/core': 0.0.9
     dependencies:
-      '@niu-tools/core': link:../../core/dist
+      '@niu-tools/core': link:../../core
     devDependencies:
       '@dcloudio/types': 3.2.11
 
@@ -77,10 +71,10 @@ importers:
 
   packages/vue3/dist:
     specifiers:
-      '@niu-tools/core': 0.0.7
+      '@niu-tools/core': 0.0.9
       vue: ^3.2.47
     dependencies:
-      '@niu-tools/core': link:../../core/dist
+      '@niu-tools/core': link:../../core
     devDependencies:
       vue: 3.2.47
 
