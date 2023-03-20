@@ -3,6 +3,10 @@ name: Publish Package to npmjs
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - 'packages/core/package.json'
+      - 'packages/uniapp/package.json'
+      - 'packages/vue3/package.json'
 
 jobs:
   publish:
