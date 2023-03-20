@@ -7,6 +7,8 @@
     "gen": "tsx ./scripts/gen-version.ts",
     "dev": "pnpm run gen && pnpm --filter @niu-tools/core dev",
     "build": "pnpm run rm && pnpm run gen && pnpm -r run build",
+    "docs:dev": "pnpm --filter docs docs:dev",
+    "docs:build": "pnpm --filter docs docs:build",
     "publish": "tsx ./scripts/publish.ts",
     "test": "vitest",
     "coverage": "vitest run --coverage"
@@ -30,6 +32,11 @@
   "pnpm": {
     "patchedDependencies": {
       "@manypkg/get-packages@1.1.3": "patches/@manypkg__get-packages@1.1.3.patch"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
     }
   }
 }
