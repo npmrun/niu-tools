@@ -1,5 +1,11 @@
 # @niu-tools/core
 
+## 0.0.10
+
+### Patch Changes
+
+- just publish
+
 ## 0.0.9
 
 ### Patch Changes
