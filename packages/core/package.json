@@ -1,6 +1,6 @@
 {
     "name": "@niu-tools/core",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",
@@ -17,5 +17,8 @@
     },
     "devDependencies": {
         "tiny-emitter": "^2.1.0"
+    },
+    "dependencies": {
+        "@niu-tools/shared": "workspace:*"
     }
 }

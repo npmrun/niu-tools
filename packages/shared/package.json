@@ -1,10 +1,18 @@
 {
     "name": "@niu-tools/shared",
-    "private": true,
+    "version": "0.0.1",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",
     "types": "index.d.ts",
     "author": "npmrun",
+    "keywords": [
+        "utils",
+        "shared"
+    ],
+    "scripts": {
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "tsc && tsc-alias"
+    },
     "license": "MIT"
 }

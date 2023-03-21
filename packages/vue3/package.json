@@ -1,6 +1,6 @@
 {
     "name": "@niu-tools/vue3",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",
@@ -19,7 +19,8 @@
         "vue": ">=3.0.0"
     },
     "dependencies": {
-        "@niu-tools/core": "workspace:*"
+        "@niu-tools/core": "workspace:*",
+        "@niu-tools/shared": "workspace:*"
     },
     "devDependencies": {
         "vue": "^3.2.47"

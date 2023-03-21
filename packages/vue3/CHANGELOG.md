@@ -1,5 +1,13 @@
 # @niu-tools/vue3
 
+## 0.0.11
+
+### Patch Changes
+
+- add shared
+- Updated dependencies
+  - @niu-tools/core@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

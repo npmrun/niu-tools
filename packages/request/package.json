@@ -1,6 +1,6 @@
 {
     "name": "@niu-tools/request",
-    "version": "0.0.1",
+    "version": "0.0.11",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",
@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@niu-tools/core": "workspace:*",
+        "@niu-tools/shared": "workspace:*",
         "@types/react": "^18.0.28"
     },
     "devDependencies": {

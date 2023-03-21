@@ -1,6 +1,6 @@
 {
     "name": "@niu-tools/uniapp",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",
@@ -19,6 +19,7 @@
         "@dcloudio/types": "^3.2.11"
     },
     "dependencies": {
-        "@niu-tools/core": "workspace:*"
+        "@niu-tools/core": "workspace:*",
+        "@niu-tools/shared": "workspace:*"
     }
 }

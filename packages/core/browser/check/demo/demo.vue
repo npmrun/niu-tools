@@ -4,7 +4,7 @@
         <cop info="getExplorerInfo" :text="IeInfo === -1 ? '这不是IE' : '这是IE' + IeInfo"></cop>
         <cop info="isHtml5Plus" :text="html5PlusInfo ? '这是html5Plus环境' : '这不是html5Plus环境'"></cop>
         <cop info="isWxMp" :text="wxMpInfo ? '这是微信小程序' : '这不是微信小程序'"></cop>
-        <cop info="isWeChat" :text="weChatInfo ? '这是微信浏览器' : '这不是浏览器'"></cop>
+        <cop info="isWeChat" :text="weChatInfo ? '这是微信浏览器' : '这不是微信浏览器'"></cop>
         <cop info="isMobile" :text="mobileInfo ? '这是手机' : '这不是手机'"></cop>
         <cop info="isWeCom" :text="isWeCom ? '这是企业微信' : '这不是企业微信'"></cop>
         <cop info="isAlipay" :text="isAlipay ? '这是支付宝' : '这不是支付宝'"></cop>
