@@ -69,7 +69,7 @@ export function useCallDelay(callback: Function, delay: number = 200, options?: 
     })
     return {
         run,
-        stop,
+        cancel,
         timeID,
         isWaiting,
     }

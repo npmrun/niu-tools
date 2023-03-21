@@ -14,7 +14,7 @@ console.log(JSON.stringify(json, null, 2));
 
 export default defineConfig({
     lang: 'zh-CN',
-    lastUpdated: true,
+    // lastUpdated: true,
     title: 'Code Tools',
     description: 'Build Tools For Code',
     themeConfig: {
