@@ -46,7 +46,7 @@ export default defineConfig({
         },
     },
     markdown: {
-        // theme: 'dracula',
+        theme: 'github-dark',
         config(md) {
             md.use(containerPreview)
             md.use(componentPreview)
