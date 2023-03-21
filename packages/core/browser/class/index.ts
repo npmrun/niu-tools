@@ -1,5 +1,6 @@
 const hasClass = function (obj: HTMLElement, cls: string) {
-    return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+    const result = obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+    return !!result
 };
 
 const addClass = function (obj: HTMLElement, cls: string) {
@@ -21,4 +22,18 @@ const toggleClass = function (obj: HTMLElement, cls: string) {
     }
 };
 
-export { hasClass, addClass, removeClass, toggleClass };
+function setStyle(el: HTMLElement, css: Partial<CSSStyleDeclaration>) {
+    for (const key in css) {
+        if (Object.prototype.hasOwnProperty.call(css, key)) {
+            const prop = css[key]
+            el.style[key] = prop as string
+        }
+    }
+}
+
+function getStyle(el: HTMLElement, cssName: keyof CSSStyleDeclaration) {
+    const cs = getComputedStyle(el, null)
+    return cs.getPropertyValue(cssName as string)
+}
+
+export { hasClass, addClass, removeClass, toggleClass, setStyle, getStyle };
