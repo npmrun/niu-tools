@@ -11,7 +11,11 @@ importers:
     specifiers:
       '@changesets/cli': ^2.26.0
       '@internal/tsconfig': workspace:*
+      '@niu-tools/core': workspace:*
+      '@niu-tools/request': workspace:*
       '@niu-tools/shared': workspace:*
+      '@niu-tools/uniapp': workspace:*
+      '@niu-tools/vue3': workspace:*
       '@types/node': ^18.14.6
       '@vitepress-demo-preview/component': ^2.2.0
       '@vitepress-demo-preview/plugin': ^1.1.7
@@ -30,7 +34,11 @@ importers:
     devDependencies:
       '@changesets/cli': 2.26.0
       '@internal/tsconfig': link:internal/tsconfig
+      '@niu-tools/core': link:packages/core
+      '@niu-tools/request': link:packages/request
       '@niu-tools/shared': link:packages/shared
+      '@niu-tools/uniapp': link:packages/uniapp
+      '@niu-tools/vue3': link:packages/vue3
       '@types/node': 18.15.5
       '@vitepress-demo-preview/component': 2.2.0_ahv4xal3d4so6da4w2jgiudfwy
       '@vitepress-demo-preview/plugin': 1.1.7_ahv4xal3d4so6da4w2jgiudfwy
@@ -51,12 +59,6 @@ importers:
     specifiers: {}
 
   packages/core:
-    specifiers:
-      tiny-emitter: ^2.1.0
-    devDependencies:
-      tiny-emitter: 2.1.0
-
-  packages/core/dist:
     specifiers:
       tiny-emitter: ^2.1.0
     devDependencies:
@@ -89,30 +91,12 @@ importers:
     devDependencies:
       '@dcloudio/types': 3.2.11
 
-  packages/uniapp/dist:
-    specifiers:
-      '@dcloudio/types': ^3.2.11
-      '@niu-tools/core': 0.0.9
-    dependencies:
-      '@niu-tools/core': link:../../core/dist
-    devDependencies:
-      '@dcloudio/types': 3.2.11
-
   packages/vue3:
     specifiers:
       '@niu-tools/core': workspace:*
       vue: ^3.2.47
     dependencies:
       '@niu-tools/core': link:../core
-    devDependencies:
-      vue: 3.2.47
-
-  packages/vue3/dist:
-    specifiers:
-      '@niu-tools/core': 0.0.9
-      vue: ^3.2.47
-    dependencies:
-      '@niu-tools/core': link:../../core/dist
     devDependencies:
       vue: 3.2.47
 

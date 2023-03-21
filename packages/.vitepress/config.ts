@@ -5,12 +5,10 @@ import { getSideBar } from './getSideBar';
 import { MarkdownTransform } from './plugins/markdownTransform';
 
 const json = getSideBar("./packages", {
-    startsDirs: ["guide", "core", "vue3", "uniapp"],
+    startsDirs: ["guide", "core/common", "core/browser", "core/node", "vue3", "uniapp"],
     ignoreMDFiles: ['CHANGELOG'],
-    ignoreDirectory: ['node_modules', 'dist'],
+    ignoreDirectory: ['node_modules', 'dist'], 
 })
-console.log(JSON.stringify(json, null, 2));
-
 
 export default defineConfig({
     lang: 'zh-CN',
