@@ -1,6 +1,18 @@
-import { IOptions } from "@/type";
 import { computed, ref, watchEffect } from "vue";
 
+interface IOptions{
+    lazy?: boolean
+    debounce?: boolean
+    throttle?: boolean
+}
+
+/**
+ * 用于延迟函数执行
+ * @param callback 回调函数
+ * @param delay 延迟时间
+ * @param options 配置
+ * @returns 内部方法
+ */
 export function useCallDelay(callback: Function, delay: number = 200, options?: IOptions) {
     let timeID = ref<ReturnType<typeof setTimeout>>()
     let last: number

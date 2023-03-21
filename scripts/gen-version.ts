@@ -12,16 +12,20 @@ const pkgVersions = {}
 for (let i = 0; i < allpkgs.length; i++) {
     const pkg = allpkgs[i];
     const packageRootJSON = path.resolve(rootDir, "packages", pkg, "package.json")
+    if(!fs.pathExistsSync(packageRootJSON)) continue
     const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
+    if(mod.private) continue
     pkgVersions[mod.name] = mod.version
 }
 for (let i = 0; i < allpkgs.length; i++) {
     const pkg = allpkgs[i];
     const packageRoot = path.resolve(rootDir, "packages", pkg)
     const packageRootJSON = path.resolve(rootDir, "packages", pkg, "package.json")
+    if(!fs.pathExistsSync(packageRootJSON)) continue
+    const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
+    if(mod.private) continue
     const packageDist = path.resolve(packageRoot, 'dist')
     fs.ensureDirSync(packageDist)
-    const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
     if (fs.pathExistsSync(path.join(packageRoot, 'CHANGELOG.md'))) {
         await fs.copyFile(path.join(packageRoot, 'CHANGELOG.md'), path.join(packageDist, 'CHANGELOG.md'))
     }

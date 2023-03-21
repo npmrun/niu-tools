@@ -1,0 +1,10 @@
+{
+    "name": "@niu-tools/shared",
+    "private": true,
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "author": "npmrun",
+    "license": "MIT"
+}

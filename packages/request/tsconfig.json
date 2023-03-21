@@ -1,0 +1,14 @@
+{
+    "extends": "@internal/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./dist",
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "include": ["**/*"],
+    "exclude": ["node_modules", "dist"]
+}

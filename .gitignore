@@ -1,6 +1,6 @@
 node_modules
 dist
-docs/docs/.vitepress/cache
+packages/.vitepress/cache
 # packages/**/dist/*
 # !packages/**/dist/CHANGELOG.md
 # !packages/**/dist/readme.md

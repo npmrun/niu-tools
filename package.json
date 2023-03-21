@@ -7,8 +7,9 @@
     "gen": "tsx ./scripts/gen-version.ts",
     "dev": "pnpm run gen && pnpm --filter @niu-tools/core dev",
     "build": "pnpm run rm && pnpm run gen && pnpm -r run build",
-    "docs:dev": "pnpm --filter docs docs:dev",
-    "docs:build": "pnpm --filter docs docs:build",
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages",
+    "docs:serve": "vitepress serve packages",
     "publish": "tsx ./scripts/publish.ts",
     "test": "vitest",
     "coverage": "vitest run --coverage"
@@ -19,15 +20,22 @@
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@internal/tsconfig": "workspace:*",
+    "@niu-tools/shared": "workspace:*",
     "@types/node": "^18.14.6",
+    "@vitepress-demo-preview/component": "^2.2.0",
+    "@vitepress-demo-preview/plugin": "^1.1.7",
     "concurrently": "^7.6.0",
     "del": "^7.0.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.0",
+    "gray-matter": "^4.0.3",
+    "lodash-es": "^4.17.21",
     "tsc-alias": "^1.8.2",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5",
-    "vitest": "^0.29.2"
+    "vitepress": "1.0.0-alpha.60",
+    "vitest": "^0.29.2",
+    "vue": "^3.2.47"
   },
   "pnpm": {
     "patchedDependencies": {
