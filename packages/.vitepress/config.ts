@@ -13,6 +13,9 @@ const json = getSideBar("./packages", {
 export default defineConfig({
     lang: 'zh-CN',
     // lastUpdated: true,
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.svg' }]
+    ],
     title: 'Code Tools',
     description: 'Build Tools For Code',
     themeConfig: {

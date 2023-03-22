@@ -6,7 +6,7 @@ hero:
     text: 自用工具库
     tagline: 构建常用的函数，封装最优的解决方法
     image:
-        src: /logo.jpg
+        src: /favicon.svg
         alt: VitePress
     actions:
         - theme: brand
