@@ -1,13 +1,13 @@
-这个一个操作 Dom 的 class 属性的工具
+这个一个操作 Dom 的工具
 
 ## Demo
 
-<preview path="./demo.vue" title="@niu-tools/core/browser/class" description="操作Dom的class"></preview>
+<preview path="./demo.vue" title="@niu-tools/core/browser/dom" description="操作Dom"></preview>
 
 ## setStyle
 
 ```ts
-import { setStyle } from "@niu-tools/core/browser/class";
+import { setStyle } from "@niu-tools/core/browser/dom";
 
 setStyle(targetRef.value!, {
     color: 'green'
@@ -18,7 +18,7 @@ setStyle(targetRef.value!, {
 ## getStyle
 
 ```ts
-import { getStyle } from "@niu-tools/core/browser/class";
+import { getStyle } from "@niu-tools/core/browser/dom";
 
 const value = getStyle(targetRef.value!, "color")
 ```

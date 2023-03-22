@@ -7,19 +7,31 @@ export const setStorage = (key: string, val: any) => {
 };
 
 export const getStorage = (key: string) => {
+    const str = localStorage.getItem(key);
+    if (str === null || str === undefined) {
+        return null;
+    }
     try {
-        const str = localStorage.getItem(key);
-        if (str === null || str === undefined) {
-            return null;
-        }
         return JSON.parse(str);
     } catch (error) {
-        console.error(error);
-        return null;
+        return str;
     }
 };
 
-export const clearStorage = (key: string) => {
+export function getAllStorage() {
+    let len = localStorage.length
+    let result = Object.create(null)
+    for (var i = 0; i < len; i++) {
+        var getKey = localStorage.key(i);
+        if (getKey) {
+            let getVal = localStorage.getItem(getKey);
+            result[getKey] = getVal
+        }
+    }
+    return result
+}
+
+export const clearStorage = (key?: string) => {
     try {
         key && localStorage.removeItem(key);
         !key && localStorage.clear();
