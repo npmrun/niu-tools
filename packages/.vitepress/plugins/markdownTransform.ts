@@ -20,9 +20,13 @@ export function MarkdownTransform(): any {
                 for (let i = 0; i < allFiles.length; i++) {
                     const file = allFiles[i];
                     const p = path.resolve(oneDir, file)
+                    let name = `${oneName}/${file}`
+                    let str = ''
                     if(fs.pathExistsSync(p)){
-                        source += `::: details ${oneName}/${file} \n\`\`\`ts \n ${fs.readFileSync(p, "utf8")} \n\`\`\` \n:::\n` 
+                        str = `::: details ${name}源码 \n\`\`\`ts \n ${fs.readFileSync(p, "utf8")} \n\`\`\` \n:::\n` 
                     }
+                    code = code.replace('$'+name+'$', str)
+                    source+=str
                 }
                 code += `\n ## 源码 \n :::: details 查看源码 \n ${source} \n :::: \n`
             }
