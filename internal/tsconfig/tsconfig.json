@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ESNext", // 最低兼容的版本
         "strict": true, // 启用严格模式
-        "module": "CommonJS", // 指定生成什么模块的代码
+        "module": "ES6", // 指定生成什么模块的代码
         "moduleResolution": "node",
         "lib": ["DOM", "ESNext"],
         "types": ["vitest/globals"],
