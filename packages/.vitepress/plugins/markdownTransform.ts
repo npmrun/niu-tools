@@ -44,3 +44,13 @@ export function MarkdownTransform(): any {
         },
     }
 }
+
+// [...`fsd
+// /**-----start:main-----**/
+// sadada
+// /**-----end:mai1n-----**/
+// sadasdad
+// /**-----start:test-----**/
+// sadada
+// /**-----end:test-----**/
+// sadasdad`.matchAll(/\/\*\*-----start:(.*?)-----\*\*\/\n(.*?)\n\/\*\*-----end:(.*?)-----\*\*\//g)]
