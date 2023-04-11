@@ -20,11 +20,11 @@
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@internal/tsconfig": "workspace:*",
-    "@niu-tools/shared": "workspace:*",
     "@niu-tools/core": "workspace:*",
+    "@niu-tools/request": "workspace:*",
+    "@niu-tools/shared": "workspace:*",
     "@niu-tools/uniapp": "workspace:*",
     "@niu-tools/vue3": "workspace:*",
-    "@niu-tools/request": "workspace:*",
     "@types/node": "^18.14.6",
     "@vitepress-demo-preview/component": "^2.2.0",
     "@vitepress-demo-preview/plugin": "^1.1.7",

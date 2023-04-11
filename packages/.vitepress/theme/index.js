@@ -8,5 +8,6 @@ export default {
     ...DefaultTheme,
     enhanceApp({ app, router, siteData }) {
         app.component('demo-preview', AntDesignContainer)
+        console.log(__APP__)
     },
 }

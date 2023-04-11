@@ -1,4 +1,7 @@
-export * as util from "./func"
+export * from "./array"
+export * from "./func"
+export * from "./object"
+export * from "./tree"
 
 export const extend = Object.assign
 

@@ -39,9 +39,3 @@ export const clearStorage = (key?: string) => {
         console.error(error);
     }
 };
-
-export default {
-    setStorage,
-    getStorage,
-    clearStorage,
-};

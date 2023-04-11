@@ -5,9 +5,9 @@ import { getSideBar } from './getSideBar';
 import { MarkdownTransform } from './plugins/markdownTransform';
 
 const json = getSideBar("./packages", {
-    startsDirs: ["guide", "core/common", "core/browser", "core/node", "vue3", "uniapp"],
+    startsDirs: ["guide", "core/common", "core/browser", "core/node", "vue3", "uniapp", "request"],
     ignoreMDFiles: ['CHANGELOG'],
-    ignoreDirectory: ['node_modules', 'dist'], 
+    ignoreDirectory: ['node_modules', 'dist'],
 })
 
 export default defineConfig({
@@ -32,6 +32,7 @@ export default defineConfig({
             '/core/': json,
             '/uniapp/': json,
             '/vue3/': json,
+            '/request/': json,
             // [
             //     {
             //         text: '导引',
@@ -59,7 +60,10 @@ export default defineConfig({
         publicDir: path.resolve(__dirname, "../../public"),
         plugins: [
             MarkdownTransform()
-        ]
+        ],
+        define: {
+            __APP__: "'aaa'"
+        },
         // server: {
         //     fs: {
         //          allow: ["../../node_modules"]
