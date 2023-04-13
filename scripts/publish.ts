@@ -13,7 +13,8 @@ const rootDir = path.resolve(__dirname, "..")
 
 const allpkgs = await fg(["*"], { cwd: path.resolve(rootDir, "packages"), onlyDirectories: true })
 
-execSync('npm run build', { stdio: 'inherit' })
+// 自行构建
+// execSync('npm run build', { stdio: 'inherit' })
 
 let command = 'npm publish --access public'
 
@@ -23,6 +24,15 @@ for (let i = 0; i < allpkgs.length; i++) {
     if (!fs.pathExistsSync(packageRootJSON)) continue
     const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
     if (mod.private) continue
+    const curRemoteVersionPath = path.resolve(rootDir, "packages", pkg, "version")
+    if (fs.pathExistsSync(curRemoteVersionPath)) {
+        const curRemoteVersion = fs.readFileSync(curRemoteVersionPath, "utf-8")
+        if (`${curRemoteVersion}` === `${mod.version}`) {
+            console.log(`${mod.name}版本与线上一致`)
+            fs.writeFileSync("./a.txt", mod.version, "utf-8")
+            continue
+        }
+    }
     if (jsonPublish.includes(pkg)) {
         try {
             execSync(command, { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg) })
@@ -34,6 +44,7 @@ for (let i = 0; i < allpkgs.length; i++) {
         try {
             execSync(command, { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg, 'dist') })
             console.log(`Published ${mod.name}`)
+            fs.writeFileSync(curRemoteVersionPath, mod.version, "utf-8")
         } catch (error) {
             console.error(error);
         }

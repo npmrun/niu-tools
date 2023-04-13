@@ -19,6 +19,7 @@ pnpm 用于库的编译运行以及发布，changeset 用于生成文档和版�
 ```
 npx changeset # 版本文档生成
 npx changeset version # 版本升级
+pnpm run build # 包构建 
 pnpm run publish # 包发布
 ```
 
