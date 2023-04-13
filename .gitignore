@@ -1,6 +1,7 @@
 node_modules
 dist
 packages/.vitepress/cache
+.turbo
 # packages/**/dist/*
 # !packages/**/dist/CHANGELOG.md
 # !packages/**/dist/readme.md
