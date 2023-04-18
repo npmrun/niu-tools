@@ -5,7 +5,8 @@
   "scripts": {
     "rm": "node ./scripts/rm.js",
     "gen": "tsx ./scripts/gen-version.ts",
-    "dev": "pnpm run gen && pnpm --filter @niu-tools/core dev",
+    "dev": "cd examples/my-app && pnpm dev",
+    "dev:core": "pnpm run gen && pnpm --filter @niu-tools/core dev",
     "build": "pnpm run rm && pnpm run gen && pnpm -r run build",
     "docs:dev": "vitepress dev packages",
     "docs:build": "vitepress build packages",
