@@ -3,7 +3,6 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  // "linked": [["@niu-tools/*"]], // 应该是不需要共享版本的
   "access": "public",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
