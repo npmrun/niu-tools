@@ -2,6 +2,7 @@ export * from "./array"
 export * from "./func"
 export * from "./object"
 export * from "./tree"
+export * from "./calcul"
 
 export const extend = Object.assign
 

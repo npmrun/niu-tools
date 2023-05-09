@@ -1,5 +1,7 @@
+# 名字
 name: Publish Package to npmjs
 
+# 表示当master被推送并且packages/*/package.json修改的时候触发
 on:
   push:
     branches: [ "master" ]
@@ -8,30 +10,33 @@ on:
 
 jobs:
   publish:
+    # 运行在ubuntu上
     runs-on: ubuntu-latest
 
     steps:
+      # 检出仓库
       - name: Checkout
         uses: actions/checkout@v3
-
+      # 安装nodejs
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16.15.0
           registry-url: 'https://registry.npmjs.org'
-
+      # 安装pnpm
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
         with:
           version: 7.18.2
           run_install: false
-
+      # 获取pnpm缓存地址
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      # pnpm缓存设置
       - uses: actions/cache@v3
         name: Setup pnpm cache
         with:
@@ -39,12 +44,14 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+      # 安装依赖
       - name: Install dependencies
         run: pnpm install
       # - name: rm
       #   run: pnpm run rm
       # - name: Build
       #   run: pnpm run build
+      # 发布
       - name: publish
         run: npm run publish
         env:
