@@ -17,13 +17,31 @@ export function MarkdownTransform(): any {
             const allFiles = fg.sync('**/*.ts', { cwd: oneDir})
             if(_name!=="packages" && i === "index.md") {
                 let source = ''
+
+                let rawcodeArray = (Array.from(code.matchAll(/<\!--code\:(.*?)\:code-->/g)??[]) as any).map(([_, name])=>name)
+                
+                
+                
                 for (let i = 0; i < allFiles.length; i++) {
                     const file = allFiles[i];
                     const p = path.resolve(oneDir, file)
                     let name = `${oneName}/${file}`
                     let str = ''
                     if(fs.pathExistsSync(p)){
-                        str = `::: details ${name}源码 \n\`\`\`ts \n ${fs.readFileSync(p, "utf8")} \n\`\`\` \n:::\n` 
+                        let rawcode = fs.readFileSync(p, "utf8")
+                        if(rawcodeArray.length){
+                            for (let i = 0; i < rawcodeArray.length; i++) {
+                                const symbol = rawcodeArray[i];
+                                let startLen = `//${symbol}===== Start`.length
+                                let startIndex = rawcode.indexOf(`//${symbol}===== Start`)
+                                let endIndex = rawcode.indexOf(`//${symbol}===== End`)
+                                console.log(`<\!--code\:${symbol}\:code-->`);
+                                if(startIndex !== -1 && endIndex !==-1 ){
+                                    code = code.replace(`<\!--code\:${symbol}\:code-->`, `:::: details ${symbol}源码\n\`\`\`ts`+rawcode.slice(startIndex+startLen, endIndex)+"\`\`\`\n ::::")
+                                }
+                            }
+                        }
+                        str = `::: details ${name}源码 \n\`\`\`ts \n ${rawcode} \n\`\`\` \n:::\n` 
                     }
                     code = code.replace('$'+name+'$', str)
                     source+=str
