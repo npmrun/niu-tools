@@ -4,11 +4,15 @@ export const modules = [
     'shared',
     'core',
     'browser',
+    'loadconfig',
     'node',
     'vue3',
     'uniapp',
     'request',
 ]
+// 需要发布的模块，
+export const publishModules = [...modules]
+export const justPublish =  ["tsconfig"]
 
 export const docs = ['guide', ...modules]
 const json = getSideBar('./packages', {
@@ -21,6 +25,7 @@ export const sidebar = {
     '/browser/': json,
     '/node/': json,
     '/core/': json,
+    '/loadconfig/': json,
     '/uniapp/': json,
     '/vue3/': json,
     '/request/': json,

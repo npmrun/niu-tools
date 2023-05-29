@@ -4,7 +4,7 @@ import fs from "fs-extra";
 import util from "util";
 import { fileURLToPath, pathToFileURL } from "url";
 import { execSync, exec } from 'node:child_process'
-import jsonPublish from "./jsonPublish";
+import { justPublish, publishModules } from "../packages/modules";
 const execPromise = util.promisify(exec);
 
 const __filename = fileURLToPath(import.meta.url)
@@ -32,7 +32,7 @@ for (let i = 0; i < allpkgs.length; i++) {
             continue
         }
     }
-    if (jsonPublish.includes(pkg)) {
+    if (justPublish.includes(pkg)) {
         try {
             execSync(command, { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg) })
             console.log(`Published ${mod.name}`)
@@ -42,7 +42,7 @@ for (let i = 0; i < allpkgs.length; i++) {
     } else {
         try {
             // 因为存在相同的依赖，可能造成重复编译，因此采用turbo，如果重复编译会复用缓存。
-            execSync('turbo run build', { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg) })
+            // execSync('turbo run build', { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg) })
             execSync(command, { stdio: 'inherit', cwd: path.resolve(rootDir, "packages", pkg, 'dist') })
             console.log(`Published ${mod.name}`)
             fs.writeFileSync(curRemoteVersionPath, mod.version, "utf-8")

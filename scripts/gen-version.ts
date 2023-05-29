@@ -2,7 +2,7 @@ import fg from "fast-glob"
 import fs from "fs-extra"
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-import jsonPublish from "./jsonPublish";
+import { justPublish, publishModules } from "../packages/modules";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -24,7 +24,7 @@ for (let i = 0; i < allpkgs.length; i++) {
     const packageRoot = path.resolve(rootDir, "packages", pkg)
     const packageRootJSON = path.resolve(rootDir, "packages", pkg, "package.json")
     if (!fs.pathExistsSync(packageRootJSON)) continue
-    if (jsonPublish.includes(pkg)) continue
+    if (justPublish.includes(pkg)) continue
     const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
     if (mod.private) continue
     for (const key of Object.keys(mod.dependencies || {})) {

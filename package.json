@@ -21,6 +21,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@internal/tsconfig": "workspace:*",
+    "@niu-tools/loadconfig": "workspace:*",
     "@niu-tools/node": "workspace:*",
     "@niu-tools/browser": "workspace:*",
     "@niu-tools/core": "workspace:*",

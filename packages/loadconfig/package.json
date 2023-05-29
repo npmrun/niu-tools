@@ -1,0 +1,34 @@
+{
+    "name": "@niu-tools/loadconfig",
+    "version": "0.0.2",
+    "main": "dist/loadconfig.mjs",
+    "types": "dist/loadconfig.d.ts",
+    "keywords": [],
+    "files": [
+        "dist",
+        "readme.md"
+    ],
+    "buildinfo": {
+        "mode": "lib",
+        "outDir": "./dist",
+        "entry": "./src/main.ts",
+        "name": "loadconfig"
+    },
+    "scripts": {
+        "dev": "anybuild -w",
+        "build": "anybuild"
+    },
+    "author": {
+        "name": "noderun",
+        "email": "1549469775@qq.com"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "anybuild": "0.0.1-beta.18",
+        "tsup": "^6.7.0"
+    },
+    "dependencies": {
+        "@niu-tools/shared": "workspace:*",
+        "esbuild": "^0.17.16"
+    }
+}
