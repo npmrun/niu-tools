@@ -1,0 +1,15 @@
+{
+    "extends": "@internal/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./dist",
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"],
+            "@niu-tools/browser/*": ["./*"],
+        }
+    },
+    "include": ["**/*"],
+    "exclude": ["node_modules", "dist"]
+}

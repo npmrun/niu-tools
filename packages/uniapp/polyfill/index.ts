@@ -1,4 +1,4 @@
-import { isFunction, isObject, isString } from "@niu-tools/core/common"
+import { isFunction, isObject, isString } from "@niu-tools/core"
 import { whichPlatform } from "../util"
 
 if (whichPlatform() === "h5") {

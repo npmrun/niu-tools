@@ -1,7 +1,7 @@
 ---
 title: 导览
 first: 0
-name: 通用/Node
+name: node
 ---
 
 nodejs的工具库

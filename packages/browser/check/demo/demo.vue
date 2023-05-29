@@ -12,8 +12,8 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { getExplorerInfo, IEVersion } from '@niu-tools/core/browser/check/ie'
-import { isWeCom, isAlipay, isDingTalk, isHtml5Plus, isMobile, isWeChat, isWxMp } from '@niu-tools/core/browser/check'
+import { getExplorerInfo, IEVersion } from '@niu-tools/browser/check/ie'
+import { isWeCom, isAlipay, isDingTalk, isHtml5Plus, isMobile, isWeChat, isWxMp } from '@niu-tools/browser/check'
 import { defineComponent, h, ref } from 'vue'
 
 const cop = defineComponent({

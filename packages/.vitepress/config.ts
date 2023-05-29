@@ -5,7 +5,7 @@ import { getSideBar } from './getSideBar';
 import { MarkdownTransform } from './plugins/markdownTransform';
 
 const json = getSideBar("./packages", {
-    startsDirs: ["guide", "core/common", "core/browser", "core/node", "vue3", "uniapp", "request"],
+    startsDirs: ["guide", "core", "browser", "node", "vue3", "uniapp", "request"],
     ignoreMDFiles: ['CHANGELOG'],
     ignoreDirectory: ['node_modules', 'dist'],
 })
@@ -29,6 +29,8 @@ export default defineConfig({
         ],
         sidebar: {
             '/guide/': json,
+            '/browser/': json,
+            '/node/': json,
             '/core/': json,
             '/uniapp/': json,
             '/vue3/': json,

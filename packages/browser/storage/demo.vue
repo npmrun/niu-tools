@@ -14,7 +14,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { getStorage, getAllStorage, clearStorage, setStorage } from "@niu-tools/core/browser/storage";
+import { getStorage, getAllStorage, clearStorage, setStorage } from "@niu-tools/browser/storage";
 import { ref } from "vue";
 
 const logs = ref<string[]>([])

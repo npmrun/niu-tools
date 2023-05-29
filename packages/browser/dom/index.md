@@ -2,12 +2,12 @@
 
 ## Demo
 
-<preview path="./demo.vue" title="@niu-tools/core/browser/dom" description="操作Dom"></preview>
+<preview path="./demo.vue" title="@niu-tools/browser/dom" description="操作Dom"></preview>
 
 ## setStyle
 
 ```ts
-import { setStyle } from "@niu-tools/core/browser/dom";
+import { setStyle } from "@niu-tools/browser/dom";
 
 setStyle(targetRef.value!, {
     color: 'green'
@@ -20,7 +20,7 @@ setStyle(targetRef.value!, {
 ## getStyle
 
 ```ts
-import { getStyle } from "@niu-tools/core/browser/dom";
+import { getStyle } from "@niu-tools/browser/dom";
 
 const value = getStyle(targetRef.value!, "color")
 ```

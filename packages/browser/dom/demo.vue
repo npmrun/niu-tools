@@ -15,7 +15,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { hasClass, addClass, removeClass, toggleClass, setStyle, getStyle } from "@niu-tools/core/browser/dom";
+import { hasClass, addClass, removeClass, toggleClass, setStyle, getStyle } from "@niu-tools/browser/dom";
 import { ref } from "vue";
 
 const targetRef = ref<HTMLElement>()

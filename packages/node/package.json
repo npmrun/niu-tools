@@ -1,5 +1,5 @@
 {
-    "name": "@niu-tools/core",
+    "name": "@niu-tools/node",
     "version": "0.0.12",
     "main": "index.js",
     "module": "index.js",
@@ -7,7 +7,7 @@
     "types": "index.d.ts",
     "keywords": [
         "utils",
-        "core"
+        "node"
     ],
     "author": "npmrun",
     "license": "MIT",
