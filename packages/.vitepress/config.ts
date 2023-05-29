@@ -1,14 +1,8 @@
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 import path from 'path'
 import { defineConfig } from 'vitepress'
-import { getSideBar } from './getSideBar';
+import { sidebar } from '../modules';
 import { MarkdownTransform } from './plugins/markdownTransform';
-
-const json = getSideBar("./packages", {
-    startsDirs: ["guide", "core", "browser", "node", "vue3", "uniapp", "request"],
-    ignoreMDFiles: ['CHANGELOG'],
-    ignoreDirectory: ['node_modules', 'dist'],
-})
 
 export default defineConfig({
     lang: 'zh-CN',
@@ -27,29 +21,7 @@ export default defineConfig({
         socialLinks: [
             { icon: 'github', link: 'https://github.com/npmrun/niu-tools' },
         ],
-        sidebar: {
-            '/guide/': json,
-            '/browser/': json,
-            '/node/': json,
-            '/core/': json,
-            '/uniapp/': json,
-            '/vue3/': json,
-            '/request/': json,
-            // [
-            //     {
-            //         text: '导引',
-            //         items: [
-            //             { text: '介绍', link: '/guide/introduction' },
-            //         ],
-            //     },
-            //     {
-            //         text: 'CC',
-            //         items: [
-            //             { text: '介绍', link: '/core/browser/README' },
-            //         ],
-            //     },
-            // ]
-        },
+        sidebar,
     },
     markdown: {
         theme: 'github-dark',
