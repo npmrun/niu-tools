@@ -16,6 +16,7 @@
         "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json"
     },
     "peerDependencies": {
+        "@vueuse/core": "^10.2.0",
         "vue": ">=3.0.0"
     },
     "optionalDependencies": {
@@ -26,6 +27,7 @@
         "@niu-tools/shared": "workspace:*"
     },
     "devDependencies": {
+        "@vueuse/core": "^10.2.0",
         "echarts": "^5.4.2",
         "vue": "^3.2.47"
     }

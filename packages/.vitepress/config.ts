@@ -24,7 +24,10 @@ export default defineConfig({
         sidebar,
     },
     markdown: {
-        theme: 'github-dark',
+        theme: {
+            light: 'vitesse-light',
+            dark: 'vitesse-dark',
+        },
         config(md) {
             md.use(containerPreview)
             md.use(componentPreview)
@@ -34,14 +37,6 @@ export default defineConfig({
         publicDir: path.resolve(__dirname, "../../public"),
         plugins: [
             MarkdownTransform()
-        ],
-        define: {
-            __APP__: "'aaa'"
-        },
-        // server: {
-        //     fs: {
-        //          allow: ["../../node_modules"]
-        //     }
-        // }
+        ]
     },
 })

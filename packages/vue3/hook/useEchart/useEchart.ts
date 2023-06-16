@@ -1,8 +1,6 @@
 import { ref, Ref, unref } from "vue"
 import * as echarts from "echarts"
-import { useEventListener } from "@/utils/useEventListener";
-import { tryOnMounted } from "@/utils/tryOnMounted";
-import { tryOnBeforeUnmount } from "@/utils/tryOnBeforeUnmount";
+import { useEventListener, tryOnMounted, tryOnBeforeUnmount } from "@vueuse/core";
 
 export function useEChart(opts: { el: Ref<HTMLElement>; option?: any }) {
     let myChart: echarts.ECharts | null = null
