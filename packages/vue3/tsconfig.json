@@ -4,6 +4,7 @@
         "declaration": true,
         "declarationDir": "./dist",
         "outDir": "./dist",
+        "types": ["web-bluetooth"],
         "baseUrl": ".",
         "paths": {
             "@/*": ["./*"]

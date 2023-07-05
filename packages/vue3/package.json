@@ -27,7 +27,8 @@
         "@niu-tools/shared": "workspace:*"
     },
     "devDependencies": {
-        "@vueuse/core": "^10.2.0",
+        "@types/web-bluetooth": "^0.0.17",
+        "@vueuse/core": "^10.2.1",
         "echarts": "^5.4.2",
         "vue": "^3.3.4"
     }

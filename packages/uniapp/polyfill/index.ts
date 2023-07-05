@@ -10,7 +10,7 @@ if (whichPlatform() === "h5") {
     }
     // https://uniapp.dcloud.net.cn/api/media/image.html#saveimagetophotosalbum
     // 此api尚未兼容h5,故处理以下
-    uni.saveImageToPhotosAlbum = uni.saveVideoToPhotosAlbum = function (options) {
+    uni.saveImageToPhotosAlbum = uni.saveVideoToPhotosAlbum = function (options: any) {
         let emptyFun = function () { }
         let config: any = {
             filePath: null,

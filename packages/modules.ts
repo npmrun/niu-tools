@@ -42,12 +42,41 @@ export const sidebar = {
             text: "总目录",
             items: [
                 {
-                    text: "浏览器",
-                    link: '/browser/readme'
+                    text: "工具模块",
+                    items: [
+                        {
+                            text: "浏览器",
+                            link: '/browser/readme'
+                        },
+                        {
+                            text: "通用",
+                            link: '/core/readme'
+                        },
+                        {
+                            text: "node",
+                            link: '/node/readme'
+                        },
+                    ]
                 },
                 {
-                    text: "通用",
-                    link: '/core/readme'
+                    text: "vue3",
+                    link: '/vue3/readme'
+                },
+                {
+                    text: "tsconfig",
+                    link: '/tsconfig/readme'
+                },
+                {
+                    text: "loadconfig",
+                    link: '/loadconfig/readme'
+                },
+                {
+                    text: "request",
+                    link: '/request/readme'
+                },
+                {
+                    text: "uniapp",
+                    link: '/uniapp/readme'
                 },
             ],
         }
@@ -59,4 +88,5 @@ export const sidebar = {
     '/uniapp/': getTree(['uniapp']),
     '/vue3/': getTree(['vue3']),
     '/request/': getTree(['request']),
+    '/tsconfig/': getTree(['tsconfig']),
 }
