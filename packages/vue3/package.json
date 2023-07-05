@@ -20,7 +20,7 @@
         "vue": ">=3.0.0"
     },
     "optionalDependencies": {
-        "echarts": ">=5"
+        "echarts": ">=5.4.2"
     },
     "dependencies": {
         "@niu-tools/core": "workspace:*",
@@ -29,6 +29,6 @@
     "devDependencies": {
         "@vueuse/core": "^10.2.0",
         "echarts": "^5.4.2",
-        "vue": "^3.2.47"
+        "vue": "^3.3.4"
     }
 }

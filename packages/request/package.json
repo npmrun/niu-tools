@@ -22,11 +22,11 @@
     "dependencies": {
         "@niu-tools/core": "workspace:*",
         "@niu-tools/shared": "workspace:*",
-        "@types/react": "^18.0.28"
+        "@types/react": "^18.2.14"
     },
     "devDependencies": {
-        "axios": "^1.3.4",
+        "axios": "^1.4.0",
         "react": "^18.2.0",
-        "vue": "^3.2.47"
+        "vue": "^3.3.4"
     }
 }

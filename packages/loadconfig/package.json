@@ -29,6 +29,6 @@
     },
     "dependencies": {
         "@niu-tools/shared": "workspace:*",
-        "esbuild": "^0.17.16"
+        "esbuild": "^0.17.19"
     }
 }

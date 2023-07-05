@@ -16,7 +16,7 @@
         "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json"
     },
     "devDependencies": {
-        "@dcloudio/types": "^3.2.11"
+        "@dcloudio/types": "^3.3.3"
     },
     "dependencies": {
         "@niu-tools/core": "workspace:*",
