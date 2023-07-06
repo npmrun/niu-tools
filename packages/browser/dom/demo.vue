@@ -1,14 +1,14 @@
 <template>
     <div>
         <div ref="targetRef">target node</div>
-        <div>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickHasClass">hasClass</button>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickAddClass">addClass</button>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickRemoveClass">removeClass</button>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickToggleClass">toggleClass</button>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickSetStyle">setStyle</button>
-            <button style="border: 1px solid black;padding: 0 6px;" @click="clickGetStyle">getStyle</button>
-        </div>
+        <a-space>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickHasClass">hasClass</a-button>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickAddClass">addClass</a-button>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickRemoveClass">removeClass</a-button>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickToggleClass">toggleClass</a-button>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickSetStyle">setStyle</a-button>
+            <a-button style="border: 1px solid black;padding: 0 6px;" @click="clickGetStyle">getStyle</a-button>
+        </a-space>
         <div style="max-height: 200px;overflow-y: auto;">
             <div v-for="log in logs">{{ log }}</div>
         </div>

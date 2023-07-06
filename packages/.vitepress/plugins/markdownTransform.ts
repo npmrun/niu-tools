@@ -14,7 +14,7 @@ export function MarkdownTransform(): any {
             const [pkg, _name, i] = id.split('/').slice(-3)
             const oneDir = path.parse(id).dir
             const oneName = oneDir.split("/").slice(-1)
-            const allFiles = fg.sync('**/*.ts', { cwd: oneDir})
+            const allFiles = fg.sync('**/*.ts', { cwd: oneDir, ignore: ["**/*.test.ts"]}) 
             if(_name!=="packages" && i === "index.md") {
                 let source = ''
 
@@ -35,7 +35,7 @@ export function MarkdownTransform(): any {
                                 let startLen = `//${symbol}===== Start`.length
                                 let startIndex = rawcode.indexOf(`//${symbol}===== Start`)
                                 let endIndex = rawcode.indexOf(`//${symbol}===== End`)
-                                console.log(`<\!--code\:${symbol}\:code-->`);
+                                // console.log(`<\!--code\:${symbol}\:code-->`);
                                 if(startIndex !== -1 && endIndex !==-1 ){
                                     code = code.replace(`<\!--code\:${symbol}\:code-->`, `:::: details ${symbol}源码\n\`\`\`ts`+rawcode.slice(startIndex+startLen, endIndex)+"\`\`\`\n ::::")
                                 }

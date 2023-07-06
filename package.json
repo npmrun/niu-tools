@@ -5,7 +5,7 @@
   "scripts": {
     "rm": "node ./scripts/rm.js",
     "gen": "tsx ./scripts/gen-version.ts",
-    "dev": "tsx ./scripts/run",
+    "dev": "pnpm run rm && pnpm run gen && tsx ./scripts/run",
     "example": "cd examples/my-app && pnpm dev",
     "dev:core": "pnpm run gen && pnpm --filter @niu-tools/core dev",
     "build": "pnpm run rm && pnpm run gen && pnpm -r --filter './packages/**' run build",
@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@arco-design/web-vue": "^2.48.0",
     "@changesets/cli": "^2.26.2",
     "@internal/tsconfig": "workspace:*",
     "@niu-tools/browser": "workspace:*",
@@ -30,6 +31,7 @@
     "@niu-tools/shared": "workspace:*",
     "@niu-tools/uniapp": "workspace:*",
     "@niu-tools/vue3": "workspace:*",
+    "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.16.19",
     "@vitepress-demo-preview/component": "^2.3.1",
     "@vitepress-demo-preview/plugin": "^1.2.0",
@@ -44,7 +46,7 @@
     "tsx": "^3.12.7",
     "turbo": "^1.10.7",
     "typescript": "^5.1.6",
-    "vitepress": "1.0.0-beta.5",
+    "vitepress": "1.0.0-alpha.60",
     "vitest": "^0.32.4",
     "vue": "^3.3.4"
   },

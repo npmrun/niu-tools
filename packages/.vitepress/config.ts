@@ -24,10 +24,10 @@ export default defineConfig({
         sidebar,
     },
     markdown: {
-        theme: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
-        },
+        // theme: {
+        //     light: 'vitesse-light',
+        //     dark: 'vitesse-dark',
+        // },
         config(md) {
             md.use(containerPreview)
             md.use(componentPreview)

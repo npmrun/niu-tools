@@ -7,7 +7,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { on, off } from ".";
+import { on, off } from "@niu-tools/browser/on";
 
 const targetRef = ref<HTMLElement>()
 

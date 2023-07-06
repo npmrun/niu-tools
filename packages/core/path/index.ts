@@ -4,7 +4,7 @@ const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g
 const DRIVE_LETTER_REGEX = /^[a-z]:/i
 
 /**
- * 
+ *
  */
 export function sanitizeFileName(name: string): string {
     const match = DRIVE_LETTER_REGEX.exec(name)
@@ -19,7 +19,7 @@ export function sanitizeFileName(name: string): string {
     )
 }
 /**
- * 
+ *
  */
 export function slash(p: string): string {
     return p.replace(/\\/g, '/')

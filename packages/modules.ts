@@ -12,7 +12,7 @@ export const modules = [
 ]
 // 需要发布的模块，
 export const publishModules = [...modules]
-export const justPublish = ["tsconfig"]
+export const justPublish = ['tsconfig']
 
 // export const docs = ['guide', ...modules]
 // const json = getSideBar('./packages', {
@@ -24,62 +24,104 @@ export const justPublish = ["tsconfig"]
 function getTree(name: string[]) {
     const result: any[] = [
         {
-            text: "总目录",
-            link: '/guide/introduction'
-        }
+            text: '总目录',
+            link: '/guide/introduction',
+            items: [
+                {
+                    text: '工具模块',
+                    link: '/core/',
+                    items: [
+                        {
+                            text: '通用',
+                            link: '/core/readme',
+                        },
+                        {
+                            text: '浏览器',
+                            link: '/browser/readme',
+                        },
+                        {
+                            text: 'node',
+                            link: '/node/readme',
+                        },
+                    ],
+                },
+                {
+                    text: 'vue3',
+                    link: '/vue3/readme',
+                },
+                {
+                    text: 'tsconfig',
+                    link: '/tsconfig/readme',
+                },
+                {
+                    text: 'loadconfig',
+                    link: '/loadconfig/readme',
+                },
+                {
+                    text: 'request',
+                    link: '/request/readme',
+                },
+                {
+                    text: 'uniapp',
+                    link: '/uniapp/readme',
+                },
+            ],
+        },
     ]
-    result.push(...getSideBar('./packages', {
-        startsDirs: name,
-        ignoreMDFiles: ['CHANGELOG'],
-        ignoreDirectory: ['node_modules', 'dist'],
-    }) ?? [])
+    result.push(
+        ...(getSideBar('./packages', {
+            startsDirs: name,
+            ignoreMDFiles: ['CHANGELOG'],
+            ignoreDirectory: ['node_modules', 'dist'],
+        }) ?? [])
+    )
     return result
 }
 
 export const sidebar = {
     '/guide/': [
         {
-            text: "总目录",
+            text: '总目录',
             items: [
                 {
-                    text: "工具模块",
+                    text: '工具模块',
                     items: [
                         {
-                            text: "浏览器",
-                            link: '/browser/readme'
+                            text: '通用',
+                            link: '/core/readme',
                         },
                         {
-                            text: "通用",
-                            link: '/core/readme'
+                            text: '浏览器',
+                            link: '/browser/readme',
                         },
                         {
-                            text: "node",
-                            link: '/node/readme'
+                            text: 'node',
+                            link: '/node/readme',
                         },
-                    ]
+                    ],
                 },
                 {
-                    text: "vue3",
-                    link: '/vue3/readme'
+                    text: 'vue3',
+                    link: '/vue3/readme',
                 },
                 {
-                    text: "tsconfig",
-                    link: '/tsconfig/readme'
+                    text: 'tsconfig',
+                    link: '/tsconfig/readme',
                 },
                 {
-                    text: "loadconfig",
-                    link: '/loadconfig/readme'
+                    text: 'loadconfig',
+                    link: '/loadconfig/readme',
                 },
                 {
-                    text: "request",
-                    link: '/request/readme'
+                    text: 'request',
+                    link: '/request/readme',
                 },
                 {
-                    text: "uniapp",
-                    link: '/uniapp/readme'
+                    text: 'uniapp',
+                    link: '/uniapp/readme',
                 },
             ],
-        }
+        },
     ],
     '/browser/': getTree(['browser']),
     '/node/': getTree(['node']),

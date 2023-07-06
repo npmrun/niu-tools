@@ -1,7 +1,7 @@
 /**
  * 将一个数字保留指定位数的小数
  */
- export function toFixed(number: any, m: any) {
+export function toFixed(number: any, m: any) {
     if (typeof number !== 'number') {
         throw new Error('number不是数字')
     }

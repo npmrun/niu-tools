@@ -1,14 +1,14 @@
 <template>
     <div style="display: flex; align-items: center">
-        <textarea
+        <a-textarea
             style="width: 220px; height: 200px"
-            :value="jsonStr(sourceObject)"
-        ></textarea>
-        <span style="padding: 0 20px;">==></span>
-        <textarea
+            :modelValue="jsonStr(sourceObject)"
+        ></a-textarea>
+        <span style="padding: 0 20px">==></span>
+        <a-textarea
             style="width: 220px; height: 200px"
-            :value="jsonStr(targetObject)"
-        ></textarea>
+            :modelValue="jsonStr(targetObject)"
+        ></a-textarea>
     </div>
 </template>
 
