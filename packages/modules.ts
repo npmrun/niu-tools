@@ -29,7 +29,7 @@ function getTree(name: string[]) {
             items: [
                 {
                     text: '工具模块',
-                    link: '/core/',
+                    link: '/core/readme',
                     items: [
                         {
                             text: '通用',

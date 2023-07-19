@@ -1,3 +1,4 @@
+//toFixed===== Start
 /**
  * 将一个数字保留指定位数的小数
  */
@@ -21,7 +22,8 @@ export function toFixed(number: any, m: any) {
     }
     return result
 }
-
+//toFixed===== End
+//accAdd===== Start
 /**
  * 两个数的精确相加
  */
@@ -58,3 +60,4 @@ export function accAdd(arg1: any, arg2: any) {
     }
     return (arg1 + arg2) / m
 }
+//accAdd===== End
