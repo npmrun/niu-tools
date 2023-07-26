@@ -145,7 +145,7 @@ var dotize = {
         })(obj, prefix, true)
     },
 
-    backward: function (obj, prefix) {
+    backward: function (obj, prefix?: string) {
         var newObj = {}
         var arStartRegex = /\[(\d+)\]/g
 

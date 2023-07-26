@@ -17,6 +17,8 @@
         // Properly support importing CJS modules in ESM
         "esModuleInterop": true,
         // Skip typechecking libraries and .d.ts files
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        // Allow 'import x from y' when a module doesn't have a default export.
+        "allowSyntheticDefaultImports": true
     }
 }
