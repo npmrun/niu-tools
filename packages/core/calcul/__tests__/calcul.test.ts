@@ -1,4 +1,4 @@
-import { toFixed, accAdd } from '.'
+import { toFixed, accAdd } from '..'
 
 describe('数字工具', () => {
     it('toFixed 非数字', () => {

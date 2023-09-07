@@ -1,5 +1,3 @@
 export * from "./utils"
-export * from "./debounce"
-export * from "./throttle"
 export * from "./array"
 export * from "./calcul"

@@ -1,0 +1,20 @@
+{
+    "snip片段from": {
+        "scope": "typescript",
+        "prefix": "snip-from",
+        "body": [
+            "//$1===== Start",
+            "$2",
+            "//$1===== End"
+        ],
+        "description":""
+    },
+    "snip片段to": {
+        "scope": "markdown",
+        "prefix": "snip-to",
+        "body": [
+            "<!--code:$1:code-->"
+        ],
+        "description":""
+    },
+}

@@ -26,46 +26,7 @@ function getTree(name: string[]) {
         {
             text: '总目录',
             link: '/guide/introduction',
-            items: [
-                {
-                    text: '工具模块',
-                    link: '/core/readme',
-                    items: [
-                        {
-                            text: '通用',
-                            link: '/core/readme',
-                        },
-                        {
-                            text: '浏览器',
-                            link: '/browser/readme',
-                        },
-                        {
-                            text: 'node',
-                            link: '/node/readme',
-                        },
-                    ],
-                },
-                {
-                    text: 'vue3',
-                    link: '/vue3/readme',
-                },
-                {
-                    text: 'tsconfig',
-                    link: '/tsconfig/readme',
-                },
-                {
-                    text: 'loadconfig',
-                    link: '/loadconfig/readme',
-                },
-                {
-                    text: 'request',
-                    link: '/request/readme',
-                },
-                {
-                    text: 'uniapp',
-                    link: '/uniapp/readme',
-                },
-            ],
+            // items: getNav(),
         },
     ]
     result.push(
@@ -78,49 +39,51 @@ function getTree(name: string[]) {
     return result
 }
 
-export const sidebar = {
+export const getNav = () => ([
+    {
+        text: '工具模块',
+        items: [
+            {
+                text: '通用',
+                link: '/core/readme',
+            },
+            {
+                text: '浏览器',
+                link: '/browser/readme',
+            },
+            {
+                text: 'node',
+                link: '/node/readme',
+            },
+        ],
+    },
+    {
+        text: 'vue3',
+        link: '/vue3/readme',
+    },
+    {
+        text: 'tsconfig',
+        link: '/tsconfig/readme',
+    },
+    {
+        text: 'loadconfig',
+        link: '/loadconfig/readme',
+    },
+    {
+        text: 'request',
+        link: '/request/readme',
+    },
+    {
+        text: 'uniapp',
+        link: '/uniapp/readme',
+    },
+])
+
+export const getSidebar = () => ({
     '/guide/': [
         {
             text: '总目录',
-            items: [
-                {
-                    text: '工具模块',
-                    items: [
-                        {
-                            text: '通用',
-                            link: '/core/readme',
-                        },
-                        {
-                            text: '浏览器',
-                            link: '/browser/readme',
-                        },
-                        {
-                            text: 'node',
-                            link: '/node/readme',
-                        },
-                    ],
-                },
-                {
-                    text: 'vue3',
-                    link: '/vue3/readme',
-                },
-                {
-                    text: 'tsconfig',
-                    link: '/tsconfig/readme',
-                },
-                {
-                    text: 'loadconfig',
-                    link: '/loadconfig/readme',
-                },
-                {
-                    text: 'request',
-                    link: '/request/readme',
-                },
-                {
-                    text: 'uniapp',
-                    link: '/uniapp/readme',
-                },
-            ],
+            items: getNav(),
         },
     ],
     '/browser/': getTree(['browser']),
@@ -131,4 +94,4 @@ export const sidebar = {
     '/vue3/': getTree(['vue3']),
     '/request/': getTree(['request']),
     '/tsconfig/': getTree(['tsconfig']),
-}
+})

@@ -1,4 +1,4 @@
-import dotize from './index'
+import dotize from '../index'
 
 describe('sum', () => {
     it('dotize convert json', () => {

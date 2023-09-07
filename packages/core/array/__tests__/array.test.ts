@@ -1,4 +1,4 @@
-import { random, uniq, demote } from '.'
+import { random, uniq, demote } from '..'
 
 describe('数组随机', () => {
     it('随机数 0.1', () => {

@@ -1,6 +1,6 @@
 import { whichPlatform } from "@/util"
 import { showLoading, hideLoading } from "@/loading"
-import { parstURL } from "@niu-tools/core/func"
+import { parstURL } from "@niu-tools/core"
 
 /**
  * 通过下载线上文档，然后在本地打开，支持app和微信小程序

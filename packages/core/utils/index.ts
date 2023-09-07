@@ -1,5 +1,7 @@
 export * from './object'
 export * from './tree'
+export * from "./debounce"
+export * from "./throttle"
 
 export const extend = Object.assign
 
