@@ -4,7 +4,7 @@ const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g
 const DRIVE_LETTER_REGEX = /^[a-z]:/i
 
 /**
- *
+ * 清理无效的文件名，防止使用非法字符串导致文件创建失败
  */
 export function sanitizeFileName(name: string): string {
     const match = DRIVE_LETTER_REGEX.exec(name)
@@ -19,7 +19,7 @@ export function sanitizeFileName(name: string): string {
     )
 }
 /**
- *
+ * 统一斜杠
  */
 export function slash(p: string): string {
     return p.replace(/\\/g, '/')

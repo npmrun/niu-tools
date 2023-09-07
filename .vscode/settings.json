@@ -1,5 +1,7 @@
 {
     "[markdown]": {
+        "editor.wordWrapColumn": 120,
+        "editor.wordWrap": "wordWrapColumn",
         "editor.formatOnSave": true,
         "editor.renderWhitespace": "all",
         "editor.quickSuggestions": {
@@ -8,5 +10,11 @@
             "strings": true
         },
         "editor.acceptSuggestionOnEnter": "on"
-    }
+    },
+    "editor.rulers": [
+        120
+    ],
+    // 这里是指所有文件按此种方式显示
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
 }

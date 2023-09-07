@@ -46,7 +46,7 @@ export function MarkdownTransform(): any {
                     code = code.replace('$'+name+'$', str)
                     source+=str
                 }
-                code += `\n ## 源码 \n :::: details 查看源码 \n ${source} \n :::: \n`
+                if(source) code += `\n ## 源码 \n :::: details 查看源码 \n ${source} \n :::: \n`
             }
             // if (!i.startsWith("index.md")) {
             //     const frontmatterEnds = code.indexOf('---\n\n')

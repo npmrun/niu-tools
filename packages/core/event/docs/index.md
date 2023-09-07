@@ -1,3 +1,10 @@
+---
+title: 发布者订阅者
+---
+
+## 推荐
+
+```
 import { createRequire } from 'module'
 
 /**
@@ -18,3 +25,4 @@ try {
 }
 
 export { TinyEmitter, emitter }
+```
