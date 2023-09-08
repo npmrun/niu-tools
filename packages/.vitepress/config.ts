@@ -7,7 +7,7 @@ import { MarkdownTransform } from './plugins/markdownTransform';
 let oldSidebar: string
 let isRestarting: boolean = false
 
-export default defineConfig({
+const userConfig = defineConfig({
     lang: 'zh-CN',
     // lastUpdated: true,
     head: [
@@ -43,6 +43,7 @@ export default defineConfig({
             MarkdownTransform(),
             {
                 name: "refresh-tree",
+                enforce: "post",
                 config(config) {
                     let curSidebar = getSidebar()
                     // @ts-ignore
@@ -52,30 +53,72 @@ export default defineConfig({
                     oldSidebar = JSON.stringify(curSidebar)
                     return config;
                 },
-                configureServer(server) {
-                    const { moduleGraph, watcher, ws, restart } = server
-                    function reload() {
+                async handleHotUpdate(ctx) {
+                    const { file, read, server, modules } = ctx
+                    if (file.endsWith('.md')) {
                         let curSidebar = getSidebar()
                         if (JSON.stringify(curSidebar) !== oldSidebar) {
-                            console.log("侧边栏更新");
-                            if (isRestarting) {
-                                return
+                            if (userConfig.themeConfig) {
+                                userConfig.themeConfig.sidebar = curSidebar
+                                oldSidebar = JSON.stringify(curSidebar)
                             }
-                            isRestarting = true
-                            restart().then(() => {
-                                setTimeout(() => {
-                                    isRestarting = false
-                                }, 0);
-                            })
+                            server.moduleGraph.onFileChange('/@siteData')
                         }
+                        // const mod = server.moduleGraph.getModuleById(
+                        //     '/@siteData'
+                        // )
+                        // if (!mod) return
+                        // if (userConfig.themeConfig) {
+                        //     let curSidebar = getSidebar()
+                        //     if (JSON.stringify(curSidebar) !== oldSidebar) {
+                        //         userConfig.themeConfig.sidebar = curSidebar
+                        //         // server.ws.send({
+                        //         //     type: 'custom',
+                        //         //     event: '/@siteData',
+                        //         //     data: {
+                        //         //         default: userConfig
+                        //         //     }
+                        //         // })
+                        //         server.ws.send({
+                        //             type: 'update',
+                        //             updates: [
+                        //                 {
+                        //                     acceptedPath: mod.url,
+                        //                     path: mod.url,
+                        //                     timestamp: Date.now(),
+                        //                     type: 'js-update'
+                        //                 }
+                        //             ]
+                        //         })
+                        //     }
                     }
-                    watcher
-                        .add(["**/*.md"])
-                        .on('add', reload)
-                        .on('change', reload)
-                        .on('unlink', reload)
+                },
+                configureServer(server) {
+                    // const { moduleGraph, watcher, ws, restart } = server
+                    // function reload() {
+                    //     let curSidebar = getSidebar()
+                    //     if (JSON.stringify(curSidebar) !== oldSidebar) {
+                    //         console.log("侧边栏更新");
+                    //         if (isRestarting) {
+                    //             return
+                    //         }
+                    //         isRestarting = true
+                    //         restart().then(() => {
+                    //             setTimeout(() => {
+                    //                 isRestarting = false
+                    //             }, 0);
+                    //         })
+                    //     }
+                    // }
+                    // watcher
+                    //     .add(["**/*.md"])
+                    //     .on('add', reload)
+                    //     .on('change', reload)
+                    //     .on('unlink', reload)
                 }
             }
         ]
     },
 })
+
+export default userConfig
