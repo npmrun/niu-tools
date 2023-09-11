@@ -8,6 +8,7 @@
     "dev": "pnpm run rm && pnpm run gen && tsx ./scripts/run",
     "example": "cd examples/my-app && pnpm dev",
     "dev:core": "pnpm run gen && pnpm --filter @niu-tools/core dev",
+    "pubone": "tsx ./scripts/buildAndPublish",
     "build": "pnpm run rm && pnpm run gen && pnpm -r --filter=./packages/** run build",
     "docs:dev": "vitepress dev packages",
     "docs:build": "vitepress build packages",

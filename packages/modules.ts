@@ -4,7 +4,6 @@ export const modules = [
     'shared',
     'core',
     'browser',
-    'loadconfig',
     'node',
     'vue3',
     'uniapp',
@@ -66,10 +65,6 @@ export const getNav = () => ([
         link: '/tsconfig/readme',
     },
     {
-        text: 'loadconfig',
-        link: '/loadconfig/readme',
-    },
-    {
         text: 'request',
         link: '/request/readme',
     },
@@ -89,7 +84,6 @@ export const getSidebar = () => ({
     '/browser/': getTree(['browser']),
     '/node/': getTree(['node']),
     '/core/': getTree(['core']),
-    '/loadconfig/': getTree(['loadconfig']),
     '/uniapp/': getTree(['uniapp']),
     '/vue3/': getTree(['vue3']),
     '/request/': getTree(['request']),
