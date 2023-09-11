@@ -25,7 +25,6 @@
     "@internal/tsconfig": "workspace:*",
     "@niu-tools/browser": "workspace:*",
     "@niu-tools/core": "workspace:*",
-    "@niu-tools/loadconfig": "workspace:*",
     "@niu-tools/node": "workspace:*",
     "@niu-tools/request": "workspace:*",
     "@niu-tools/shared": "workspace:*",
