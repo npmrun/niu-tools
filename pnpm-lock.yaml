@@ -180,11 +180,14 @@ importers:
   packages/vue3:
     optionalDependencies:
       '@vueuse/core':
-        specifier: '>=10'
+        specifier: '>=10.0.0'
         version: 10.4.1(vue@3.3.4)
       echarts:
-        specifier: '>=5'
-        version: 5.4.3
+        specifier: '>=5.0.0'
+        version: 5.0.0
+      vue-router:
+        specifier: '>=4.0.0'
+        version: 4.0.0(vue@3.3.4)
     devDependencies:
       '@types/web-bluetooth':
         specifier: ^0.0.17
@@ -1910,12 +1913,12 @@ packages:
       path-type: 4.0.0
     dev: true
 
-  /echarts@5.4.3:
-    resolution: {integrity: sha512-mYKxLxhzy6zyTi/FaEbJMOZU1ULGEQHaeIeuMR5L+JnJTpz+YR03mnnpBhbR4+UYJAgiXgpyTVLffPAjOTLkZA==}
+  /echarts@5.0.0:
+    resolution: {integrity: sha512-6SDcJbLVOcfQyjPg+spNU1+JVrkU1B9fzUa5tpbP/mMNUPyigCOJwcEIQAJSbp9jt5UP3EXvQR0vtYXIo9AjyA==}
     requiresBuild: true
     dependencies:
-      tslib: 2.3.0
-      zrender: 5.4.4
+      tslib: 1.10.0
+      zrender: 5.0.1
     dev: false
     optional: true
 
@@ -3662,8 +3665,8 @@ packages:
       plimit-lit: 1.5.0
     dev: true
 
-  /tslib@2.3.0:
-    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+  /tslib@1.10.0:
+    resolution: {integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==}
     requiresBuild: true
     dev: false
     optional: true
@@ -4046,6 +4049,16 @@ packages:
     dependencies:
       vue: 3.3.4
 
+  /vue-router@4.0.0(vue@3.3.4):
+    resolution: {integrity: sha512-RiAsDsSV73TBqppgpAKghb5exHHKsFuTii7hbhj9QHjWJNDE4lBDTr7bVALG9DH9vVcFI+7PUTBGYbytBFsWsQ==}
+    requiresBuild: true
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.3.4
+    dev: false
+    optional: true
+
   /vue-template-compiler@2.7.14:
     resolution: {integrity: sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==}
     dependencies:
@@ -4230,10 +4243,10 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /zrender@5.4.4:
-    resolution: {integrity: sha512-0VxCNJ7AGOMCWeHVyTrGzUgrK4asT4ml9PEkeGirAkKNYXYzoPJCLvmyfdoOXcjTHPs10OZVMfD1Rwg16AZyYw==}
+  /zrender@5.0.1:
+    resolution: {integrity: sha512-i8FNCKAKfF0EfZFJ6w2p30umBrCyy481/PePFQqPdtNgCl5Hp5z7/dovqb7soEoFkhNvhjJ/J4W9zFALeae6yA==}
     requiresBuild: true
     dependencies:
-      tslib: 2.3.0
+      tslib: 1.10.0
     dev: false
     optional: true
