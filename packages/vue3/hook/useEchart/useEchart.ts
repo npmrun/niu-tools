@@ -1,9 +1,10 @@
 import { ref, Ref, unref } from "vue"
 import * as echarts from "echarts"
+import type { } from "echarts"
 import { useEventListener, tryOnMounted, tryOnBeforeUnmount } from "@vueuse/core";
 
 export function useEChart(opts: { el: Ref<HTMLElement>; option?: any }) {
-    let myChart: echarts.ECharts | null = null
+    let myChart: ReturnType<typeof echarts.init> | null = null
     let curOption = ref(opts.option ?? {})
 
     const stop = useEventListener(window, "resize", () => {
