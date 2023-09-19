@@ -3,6 +3,7 @@
 import path from "path";
 import fs from "fs-extra";
 import fg from "fast-glob";
+import grayMatter from "gray-matter";
 
 export function MarkdownTransform(): any {
     return {
@@ -14,39 +15,46 @@ export function MarkdownTransform(): any {
             const [pkg, _name, i] = id.split('/').slice(-3)
             const oneDir = path.parse(id).dir.endsWith("docs") ? path.parse(path.parse(id).dir).dir : path.parse(id).dir
             const oneName = oneDir.split("/").slice(-1)
-            const allFiles = fg.sync('**/*.ts', { cwd: oneDir, ignore: ["**/*.test.ts"]}) 
-            if(_name!=="packages" && i === "index.md") {
-                let source = ''
+            const allFiles = fg.sync('**/*.ts', { cwd: oneDir, ignore: ["**/*.test.ts"] })
+            if (_name !== "packages" && i === "index.md") {
+                const matter = grayMatter(fs.readFileSync(id, "utf8"));
+                const { data, content } = matter
 
-                let rawcodeArray = (Array.from(code.matchAll(/<\!--code\:(.*?)\:code-->/g)??[]) as any).map(([_, name])=>name)
-                
-                
-                
+                if (data.category) {
+                    code = grayMatter.stringify(`${data.category ? `分类：\`${data.category}\`` : ''}` + content, data)
+                }
+
+                let source = ""
+
+                let rawcodeArray = (Array.from(code.matchAll(/<\!--code\:(.*?)\:code-->/g) ?? []) as any).map(([_, name]) => name)
+
+
+
                 for (let i = 0; i < allFiles.length; i++) {
                     const file = allFiles[i];
                     const p = path.resolve(oneDir, file)
                     let name = `${oneName}/${file}`
                     let str = ''
-                    if(fs.pathExistsSync(p)){
+                    if (fs.pathExistsSync(p)) {
                         let rawcode = fs.readFileSync(p, "utf8")
-                        if(rawcodeArray.length){
+                        if (rawcodeArray.length) {
                             for (let i = 0; i < rawcodeArray.length; i++) {
                                 const symbol = rawcodeArray[i];
                                 let startLen = `//${symbol}===== Start`.length
                                 let startIndex = rawcode.indexOf(`//${symbol}===== Start`)
                                 let endIndex = rawcode.indexOf(`//${symbol}===== End`)
                                 // console.log(`<\!--code\:${symbol}\:code-->`);
-                                if(startIndex !== -1 && endIndex !==-1 ){
-                                    code = code.replace(`<\!--code\:${symbol}\:code-->`, `:::: details ${symbol}源码\n\`\`\`ts`+rawcode.slice(startIndex+startLen, endIndex)+"\`\`\`\n ::::")
+                                if (startIndex !== -1 && endIndex !== -1) {
+                                    code = code.replace(`<\!--code\:${symbol}\:code-->`, `:::: details ${symbol}源码\n\`\`\`ts` + rawcode.slice(startIndex + startLen, endIndex) + "\`\`\`\n ::::")
                                 }
                             }
                         }
-                        str = `::: details ${name.replace(/\\/g,"/")}源码 \n\`\`\`ts \n ${rawcode} \n\`\`\` \n:::\n` 
+                        str = `::: details ${name.replace(/\\/g, "/")}源码 \n\`\`\`ts \n ${rawcode} \n\`\`\` \n:::\n`
                     }
-                    code = code.replace('$'+name+'$', str)
-                    source+=str
+                    code = code.replace('$' + name + '$', str)
+                    source += str
                 }
-                if(source) code += `\n ## 源码 \n :::: details 查看源码 \n ${source} \n :::: \n`
+                if (source) code += `\n ## 源码 \n :::: details 查看源码 \n ${source} \n :::: \n`
             }
             // if (!i.startsWith("index.md")) {
             //     const frontmatterEnds = code.indexOf('---\n\n')
@@ -55,7 +63,7 @@ export function MarkdownTransform(): any {
 
             //     code = code.slice(0, sliceIndex) + "\n# " + _name + "\n" + code.slice(sliceIndex)
             //     console.log(code, frontmatterEnds);
-                
+
             //     code = code
             //         .replace(/(# \w+?)\n/, `$1\n\n<div>aaa</div>\n`)
             //         .replace(/## (Components?(?:\sUsage)?)/i, '## $1\n<LearnMoreComponents />\n\n')
