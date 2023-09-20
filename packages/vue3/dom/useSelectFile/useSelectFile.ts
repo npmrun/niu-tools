@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 
-import { FileSelectCancelError, IllegalFileError, selectFile } from '@/utils';
+import { FileSelectCancelError, IllegalFileError, selectFile } from '../../utils';
 
 export const useSelectFile = () => {
   const loading = ref<boolean>(false);

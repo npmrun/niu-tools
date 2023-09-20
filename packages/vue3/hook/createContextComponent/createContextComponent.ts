@@ -1,6 +1,6 @@
 import { defineComponent, provide, computed, inject, type PropType, type ComputedRef } from 'vue';
 
-export function createContext<T>(defaultValue: T) {
+export function createContextComponent<T>(defaultValue: T) {
     const KEY = Symbol('CREATE_CONTEXT_KEY');
     const Provider = defineComponent({
         props: {

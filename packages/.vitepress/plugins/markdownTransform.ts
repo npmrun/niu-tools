@@ -15,7 +15,7 @@ export function MarkdownTransform(): any {
             const [pkg, _name, i] = id.split('/').slice(-3)
             const oneDir = path.parse(id).dir.endsWith("docs") ? path.parse(path.parse(id).dir).dir : path.parse(id).dir
             const oneName = oneDir.split("/").slice(-1)
-            const allFiles = fg.sync('**/*.ts', { cwd: oneDir, ignore: ["**/*.test.ts"] })
+            const allFiles = fg.sync('**/*.ts', { cwd: oneDir, ignore: ["**/*.test.ts", "docs", "test"] })
             if (_name !== "packages" && i === "index.md") {
                 const matter = grayMatter(fs.readFileSync(id, "utf8"));
                 const { data, content } = matter
