@@ -12,7 +12,13 @@ export const remove = <T>(arr: T[], el: T) => {
     }
 }
 
+/**
+ * 返回一个布尔值，表示对象自有属性（而不是继承来的属性）中是否具有指定的属性。
+ */
 const hasOwnProperty = Object.prototype.hasOwnProperty
+/**
+ * 返回一个布尔值，表示对象自有属性（而不是继承来的属性）中是否具有指定的属性。
+ */
 export const hasOwn = (
     val: object,
     key: string | symbol

@@ -1,5 +1,6 @@
 import { getSideBar } from './.vitepress/getSideBar'
 
+// 需要build的模块
 export const modules = [
     'shared',
     'core',
@@ -9,8 +10,9 @@ export const modules = [
     'uniapp',
     'request',
 ]
-// 需要发布的模块，
+// 需要发布的模块
 export const publishModules = [...modules]
+// 直接发布的模块
 export const justPublish = ['tsconfig']
 
 // export const docs = ['guide', ...modules]

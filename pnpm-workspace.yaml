@@ -1,5 +1,6 @@
 packages:
   - 'internal/**/*'
   - 'examples/**/*'
+  - '!examples/build-treeshake'
   - 'packages/**/*'
   - '!**/dist/**'

@@ -1,0 +1,19 @@
+{
+    "name": "build-treeshake",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rollup -c rollup.config.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@niu-tools/core": "file:../../packages/core/dist/niu-tools-core-0.0.13.tgz",
+        "@rollup/plugin-commonjs": "^25.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.1",
+        "rollup": "^3.29.2"
+    }
+}

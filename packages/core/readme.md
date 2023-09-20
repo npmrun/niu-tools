@@ -10,7 +10,7 @@ name: 通用
 npm i @niu-tools/core
 ```
 
+## 其他推荐
 
-core
-https://github.com/lancedikson/bowser  
-https://github.com/mumuy/browser
+-   [lodashjs](https://www.lodashjs.com/)
+-   [ramda](https://ramda.cn/)

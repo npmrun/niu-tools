@@ -1,4 +1,4 @@
-import { debounce } from '.'
+import { debounce } from '..'
 
 describe('防抖函数', () => {
     it('防抖', async () => {

@@ -1,3 +1,4 @@
+//throttle===== Start
 export function throttle<T extends any[], R = void>(
     fn: (...argu: T) => R,
     interval: number
@@ -20,3 +21,4 @@ export function throttle<T extends any[], R = void>(
         }
     }
 }
+//throttle===== End
