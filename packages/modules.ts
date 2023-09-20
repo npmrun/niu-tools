@@ -25,7 +25,7 @@ export const justPublish = ['tsconfig']
 function getTree(name: string[]) {
     const result: any[] = [
         {
-            text: '总目录',
+            text: '<- 总目录',
             link: '/guide/introduction',
             // items: getNav(),
         },
