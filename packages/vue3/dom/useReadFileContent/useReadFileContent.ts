@@ -1,6 +1,6 @@
 import { ref, watch } from 'vue';
 
-import { FileSelectCancelError, IllegalFileError } from '@/utils';
+import { FileSelectCancelError, IllegalFileError } from '../vc-utils';
 
 import { useSelectFile } from '../useSelectFile';
 

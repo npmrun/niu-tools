@@ -27,7 +27,7 @@ function getTree(name: string[]) {
         {
             text: '<- 总目录',
             link: '/guide/introduction',
-            // items: getNav(),
+            // items: getAllModule(),
         },
     ]
     result.push(
@@ -41,6 +41,13 @@ function getTree(name: string[]) {
 }
 
 export const getNav = () => ([
+    {
+        text: "naive-ui",
+        link: "https://www.naiveui.com/"
+    }
+])
+
+export const getAllModule = () => ([
     {
         text: '工具模块',
         items: [
@@ -80,7 +87,7 @@ export const getSidebar = () => ({
     '/guide/': [
         {
             text: '总目录',
-            items: getNav(),
+            items: getAllModule(),
         },
     ],
     '/browser/': getTree(['browser']),
