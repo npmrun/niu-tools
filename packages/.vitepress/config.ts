@@ -38,6 +38,9 @@ const userConfig = defineConfig({
         },
     },
     vite: {
+        server: {
+            port: 1234
+        },
         publicDir: path.resolve(__dirname, "../../public"),
         plugins: [
             MarkdownTransform(),
