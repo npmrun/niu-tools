@@ -27,7 +27,9 @@ export async function eachPackage(cb: (opts: { pkgRoot: string, pkgJson: object,
         const packageRoot = path.resolve(rootDir, "packages", pkg)
         const packageRootJSON = path.resolve(rootDir, "packages", pkg, "package.json")
         if (!fs.pathExistsSync(packageRootJSON)) continue
-        const mod = (await import(pathToFileURL(packageRootJSON).toString())).default
+
+        const _mod = (await import(pathToFileURL(packageRootJSON).toString(), { assert: { type: "json" } }))
+        const mod = _mod.default
         mod.scripts = {}
         if (mod.private) continue // e 私有包不处理
         // e 将各个包中的版本替换掉，替换成最新的版本
