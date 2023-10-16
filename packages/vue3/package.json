@@ -1,6 +1,6 @@
 {
     "name": "@niu-tools/vue3",
-    "version": "0.0.14",
+    "version": "0.0.17",
     "main": "index.js",
     "module": "index.js",
     "typings": "index.d.ts",

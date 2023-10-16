@@ -34,9 +34,9 @@ if (argv.length && argv[0]) {
             cwd: packageRoot
         })
 
-        await execa('pnpm', ['--filter', `${pkg}`, 'publish', '--no-git-checks', '--access', 'public'], {
+        await execa('pnpm', ['publish', '--no-git-checks', '--access', 'public'], {
             stdio: 'inherit',
-            cwd: packageRoot
+            cwd: path.resolve(packageRoot, 'dist')
         })
 
         return EEachPackage.pass
