@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "a": "tsx ./scripts/test.ts",
     "rm": "node ./scripts/rm.js",
     "gen": "tsx ./scripts/gen-version.ts",
     "dev": "pnpm run rm && pnpm run gen && tsx ./scripts/run",
