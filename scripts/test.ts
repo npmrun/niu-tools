@@ -56,12 +56,42 @@ function walkDir(dir: string = ".", cb?: (output: IOutput) => void, opts: IOpts 
     _walk(dir)
 }
 
-
+const allMenu: any[] = []
 walkDir("packages", function ({ baseRelativePath, isFile }) {
-    console.log(baseRelativePath);
+    if (isFile) {
+        const menuList = baseRelativePath.split(path.sep)
+        let index = 0
+        let len = menuList.length
+        let curList = allMenu
+        while (index < len) {
+            let curText = menuList[index]
+            let child = curList.find(node => node.text === curText)
+            if (!child) {
+                child = {
+                    text: curText,
+                    items: []
+                }
+                curList.push(child)
+            }
+            curList = child.items
+            index++
+            if (index < len && menuList[index] === "index.md") {
+                child.link = baseRelativePath.replace(/index\.md$/, "")
+                // Reflect.deleteProperty(child, "items")
+                index++ // 跳过index.md
+            }
+            if (index < len && menuList[index] === "readme.md") {
+                child.link = baseRelativePath.replace(/readme\.md$/, "readme.html")
+                // Reflect.deleteProperty(child, "items")
+                index++ // 跳过index.md
+            }
+        }
+    }
 }, {
     base: "packages",
     include: /\.md$/,
     ignore: /(CHANGELOG)\.md/,
     exculeFolder: ["node_modules", ".git", "dist"]
 })
+
+fs.writeFileSync("./aa.json", JSON.stringify(allMenu, null, 2))
