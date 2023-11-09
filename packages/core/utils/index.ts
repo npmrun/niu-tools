@@ -99,6 +99,19 @@ export function addMethod(
     }
 }
 
+/***
+const {promise,resolve,reject} = defer()
+
+;(async ()=>{
+  console.log(11111)
+  const data = await promise // 等resolve之后才会执行后面的代码
+  console.log(data)
+})()
+
+setTimeout(()=>{
+  resolve(123) 
+},2000)
+ */
 export function defer() {
     let resolve, reject
     return {

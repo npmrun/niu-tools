@@ -93,5 +93,6 @@ walkDir("packages", function ({ baseRelativePath, isFile }) {
     ignore: /(CHANGELOG)\.md/,
     exculeFolder: ["node_modules", ".git", "dist"]
 })
+console.log(JSON.stringify(allMenu, null, 2));
 
-fs.writeFileSync("./aa.json", JSON.stringify(allMenu, null, 2))
+// fs.writeFileSync("./aa.json", JSON.stringify(allMenu, null, 2))
