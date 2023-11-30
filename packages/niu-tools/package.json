@@ -1,0 +1,20 @@
+{
+    "name": "niu-tools",
+    "version": "0.0.12",
+    "main": "index.js",
+    "module": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
+    "keywords": [
+        "utils"
+    ],
+    "author": "npmrun",
+    "license": "MIT",
+    "scripts": {
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "tsc && tsc-alias"
+    },
+    "peerDependencies": {},
+    "dependencies": {},
+    "devDependencies": {}
+}
