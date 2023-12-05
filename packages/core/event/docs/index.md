@@ -26,3 +26,21 @@ try {
 
 export { TinyEmitter, emitter }
 ```
+
+## 其他
+
+如果存在原生的发布者订阅者模块可以直接使用，比如 nodejs 中的 EventEmitter
+
+```ts
+import { EventEmitter } from 'events'
+
+class MyEmiter extends EventEmitter {}
+
+const myEmitter = new MyEmiter()
+
+myEmitter.on('hello', () => {
+    console.log('hello 有人喊你啦')
+})
+
+myEmitter.emit('hello')
+```
